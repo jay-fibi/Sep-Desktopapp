@@ -1,0 +1,14 @@
+# Compiled Java
+*.class
+
+# Compiled C
+*.exe
+*.out
+*.o
+
+# Python
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
