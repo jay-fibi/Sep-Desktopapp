@@ -1,0 +1,5 @@
+# Build output and tooling caches (node_modules is covered by the root .gitignore)
+dist/
+coverage/
+*.local
+.vite/
