@@ -1,0 +1,208 @@
+/* Demo: styles for the simple login screen */
+
+:root {
+  --bg: #eef2ff;
+  --bg-accent: #dbe4ff;
+  --card: #ffffff;
+  --text: #1f2430;
+  --muted: #6b7280;
+  --brand: #4f46e5;
+  --brand-hover: #4338ca;
+  --border: #d5d9e2;
+  --ring: rgba(79, 70, 229, 0.25);
+  --radius: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  color: var(--text);
+  background: linear-gradient(160deg, var(--bg), var(--bg-accent));
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Center the card in the viewport */
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.card {
+  width: 100%;
+  max-width: 380px;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: 0 18px 40px rgba(31, 36, 48, 0.14);
+  padding: 32px 28px;
+}
+
+.card__header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 14px;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  color: #fff;
+  background: var(--brand);
+  border-radius: 50%;
+}
+
+h1 {
+  margin: 0;
+  font-size: 24px;
+  letter-spacing: -0.01em;
+}
+
+.subtitle {
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 11px 13px;
+  font: inherit;
+  font-size: 15px;
+  color: var(--text);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+input::placeholder {
+  color: #9aa1ad;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border-color: var(--brand);
+  box-shadow: 0 0 0 4px var(--ring);
+}
+
+/* "Remember me" on the left, "Forgot password?" on the right */
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13px;
+}
+
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  accent-color: var(--brand);
+  cursor: pointer;
+}
+
+.link {
+  color: var(--brand);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.link:hover,
+.link:focus-visible {
+  text-decoration: underline;
+}
+
+.btn {
+  margin-top: 4px;
+  padding: 12px 16px;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--brand);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.05s ease;
+}
+
+.btn:hover {
+  background: var(--brand-hover);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--ring);
+}
+
+.footnote {
+  margin: 22px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* Follow the operating system's dark theme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111827;
+    --bg-accent: #1f2937;
+    --card: #1b2230;
+    --text: #e8eaf0;
+    --muted: #9aa3b2;
+    --brand: #7c7cf8;
+    --brand-hover: #918ffb;
+    --border: #333c4d;
+    --ring: rgba(124, 124, 248, 0.3);
+  }
+
+  input[type="email"],
+  input[type="password"] {
+    background: #141a25;
+  }
+
+  .btn {
+    color: #131826;
+  }
+}
