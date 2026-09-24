@@ -1,0 +1,12 @@
+# frozen_string_literal: true
+
+# The calculator itself only uses the standard library; these gems are for
+# running and packaging the development tasks (rake test, rake console).
+source 'https://rubygems.org'
+
+ruby '>= 3.1'
+
+group :development do
+  gem 'minitest', '>= 5.0'
+  gem 'rake', '~> 13.0'
+end

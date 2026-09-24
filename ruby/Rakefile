@@ -1,0 +1,23 @@
+# frozen_string_literal: true
+
+require 'rake/testtask'
+require 'rbconfig'
+require_relative 'lib/calculator'
+
+Rake::TestTask.new(:test) do |task|
+  task.libs << 'lib' << 'test'
+  task.pattern = 'test/**/*_test.rb'
+  task.description = 'Run the calculator test suite'
+end
+
+desc 'Start an IRB session with the calculator library loaded'
+task :console do
+  exec(RbConfig.ruby, '-Ilib', '-rcalculator', '-e', "require 'irb'; IRB.start")
+end
+
+desc 'Evaluate an expression, e.g. rake evaluate["2 * (3 + 4)"]'
+task :evaluate, [:expression] do |_task, arguments|
+  puts Calculator::Format.number(Calculator.evaluate(arguments[:expression].to_s))
+end
+
+task default: :test
