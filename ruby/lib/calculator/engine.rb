@@ -131,6 +131,9 @@ module Calculator
     def evaluate(source)
       statements = Parser.new(Lexer.new(source).tokens).parse
       result = statements.reduce(0) { |_previous, statement| evaluate_node(statement) }
+      # Values seeded through variables: are checked here too, so that a
+      # caller cannot smuggle an Infinity or NaN into a result.
+      result = check_range!(result)
 
       @variables[ANSWER] = result
     end

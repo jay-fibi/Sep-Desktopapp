@@ -30,6 +30,9 @@ module Calculator
       ';' => :separator
     }.freeze
     SYMBOL_PATTERN = Regexp.union(SYMBOLS.keys)
+    # Largest value a Float can hold; literals above it are reported instead
+    # of silently turning into Infinity.
+    MAX_FLOAT = Float::MAX.to_r
 
     def initialize(source)
       @source = source
@@ -69,10 +72,23 @@ module Calculator
 
     # Whole numbers stay Integers so that exact arithmetic (2 ** 100) keeps
     # working; anything with a decimal point or exponent becomes a Float.
+    # Literals that overflow a Float (1e400) are rejected here rather than
+    # turning into Infinity halfway through a calculation.
     def number_value(text)
-      return Float(text) if text.match?(/[.eE]/)
+      return Integer(text, 10) unless text.match?(/[.eE]/)
 
-      Integer(text, 10)
+      float_value(text)
+    end
+
+    # Rational parses a decimal literal exactly, which makes the range check
+    # reliable, and it avoids the "Float ... out of range" warning that
+    # String#to_f writes to stderr for values above Float::MAX.
+    def float_value(text)
+      if Rational(text) > MAX_FLOAT
+        raise ParseError, "number #{text} is outside the supported numeric range"
+      end
+
+      text.to_f
     end
   end
 end

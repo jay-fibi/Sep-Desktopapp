@@ -158,4 +158,18 @@ class EngineTest < CalculatorTestCase
   def test_zero_to_a_negative_power
     assert_calculator_error Calculator::EvaluationError, 'Cannot divide by zero', '0 ** -1'
   end
+
+  def test_seeded_variables_must_still_be_finite
+    [Float::INFINITY, Float::NAN].each do |value|
+      error = assert_raises(Calculator::EvaluationError) do
+        Calculator.evaluate('x', variables: { 'x' => value })
+      end
+
+      assert_equal 'result is outside the supported numeric range', error.message
+    end
+  end
+
+  def test_seeded_variables_are_used_for_arithmetic
+    assert_equal 14.0, Calculator.evaluate('x * 2 + 4', variables: { 'x' => 5 })
+  end
 end

@@ -69,4 +69,11 @@ class LexerTest < CalculatorTestCase
   def test_newlines_separate_tokens
     assert_equal [1, 2, 3], tokens("1\n2\t3").map(&:value)
   end
+
+  def test_literals_that_overflow_a_float_are_rejected
+    error = assert_raises(Calculator::ParseError) { tokens('1e400') }
+
+    assert_equal 'number 1e400 is outside the supported numeric range', error.message
+    assert_raises(Calculator::ParseError) { tokens('1e400 + 1') }
+  end
 end

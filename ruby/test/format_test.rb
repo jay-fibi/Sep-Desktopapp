@@ -45,4 +45,11 @@ class FormatTest < CalculatorTestCase
   def test_other_numeric_types_are_rendered_as_floats
     assert_equal '0.5', format(Rational(1, 2))
   end
+
+  # The engine never produces these, but the formatter never raises either.
+  def test_non_finite_values_use_rubys_own_spelling
+    assert_equal 'NaN', format(Float::NAN)
+    assert_equal 'Infinity', format(Float::INFINITY)
+    assert_equal '-Infinity', format(-Float::INFINITY)
+  end
 end
