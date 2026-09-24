@@ -1,61 +1,111 @@
 <!DOCTYPE html>
-<!-- Demo: simple login screen (HTML + CSS, no JavaScript) -->
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign in</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sign in - Simple Calculator</title>
+    <meta
+      name="description"
+      content="Demo sign-in page for the Simple Calculator: credentials are matched in the browser only."
+    />
+    <!-- Shared tokens/components first, then the login specifics -->
+    <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="login.css" />
   </head>
-  <body>
-    <main class="page">
-      <section class="card" aria-labelledby="login-title">
-        <header class="card__header">
-          <div class="logo" aria-hidden="true">&#9733;</div>
-          <h1 id="login-title">Welcome back</h1>
-          <p class="subtitle">Sign in to continue to your account.</p>
-        </header>
+  <body class="login-page">
+    <main class="login-layout">
+      <section class="card login-card" aria-labelledby="login-heading">
+        <h1 id="login-heading">Sign in</h1>
+        <p class="subtitle" id="login-subtitle">
+          Demo account only &mdash; the credentials are checked in the browser.
+        </p>
 
-        <form class="form" action="#" method="post">
+        <form id="login-form" novalidate>
           <div class="field">
-            <label for="email">Email</label>
+            <label for="email"><span>Email</span></label>
             <input
               id="email"
+              class="text-input"
               name="email"
               type="email"
-              placeholder="you@example.com"
-              autocomplete="email"
+              inputmode="email"
+              autocomplete="username"
+              placeholder="demo@example.com"
+              aria-describedby="email-error"
               required
             />
+            <p class="field-error" id="email-error"></p>
           </div>
 
           <div class="field">
-            <label for="password">Password</label>
-            <input
-              id="password"
-              name="password"
-              type="password"
-              placeholder="Enter your password"
-              autocomplete="current-password"
-              required
-            />
+            <label for="password"><span>Password</span></label>
+            <div class="input-group">
+              <input
+                id="password"
+                class="text-input"
+                name="password"
+                type="password"
+                autocomplete="current-password"
+                placeholder="Your password"
+                aria-describedby="password-hint password-error"
+                required
+              />
+              <button
+                type="button"
+                id="toggle-password"
+                class="btn password-toggle"
+                data-action="toggle-password"
+                aria-controls="password"
+                aria-pressed="false"
+              >
+                Show
+              </button>
+            </div>
+            <p class="hint" id="password-hint">At least 8 characters.</p>
+            <p class="field-error" id="password-error"></p>
           </div>
 
-          <div class="row">
-            <label class="checkbox">
-              <input type="checkbox" name="remember" />
-              <span>Remember me</span>
+          <div class="checkbox-row">
+            <label class="checkbox" for="remember">
+              <input id="remember" name="remember" type="checkbox" />
+              <span>Remember my email</span>
             </label>
-            <a class="link" href="#">Forgot password?</a>
+            <button type="button" class="link-button" data-action="forgot-password">
+              Forgot password?
+            </button>
           </div>
 
-          <button class="btn" type="submit">Sign in</button>
-        </form>
+          <div class="login-actions">
+            <button type="submit" id="sign-in" class="btn btn-primary btn-block">Sign in</button>
+            <div class="actions">
+              <button type="button" class="btn" data-action="fill-demo">Use demo credentials</button>
+              <button type="button" class="btn" data-action="toggle-theme">Theme</button>
+              <button type="button" class="btn" data-action="toggle-help">Help</button>
+              <button type="button" id="sign-out" class="btn" data-action="sign-out" hidden>
+                Sign out
+              </button>
+            </div>
+          </div>
 
-        <p class="footnote">
-          Don&rsquo;t have an account? <a class="link" href="#">Create one</a>
-        </p>
+          <p id="message" class="message" role="status" aria-live="polite"></p>
+          <pre id="help" class="help" hidden></pre>
+
+          <p class="demo-line">
+            Demo account: <code id="demo-credentials">demo@example.com / calculator123</code>
+          </p>
+        </form>
       </section>
+
+      <footer class="page-footer login-footer">
+        <p>
+          Nothing is uploaded: the demo user lives in <code>config.json</code> and is
+          matched in the browser. <a href="index.html">Back to the calculator</a>.
+        </p>
+      </footer>
     </main>
+
+    <!-- Shared helpers first, then the page logic -->
+    <script src="src/utils/auth.js"></script>
+    <script src="login.js"></script>
   </body>
 </html>

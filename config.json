@@ -1,0 +1,39 @@
+{
+  "app": {
+    "name": "Simple Calculator",
+    "version": "1.0.0",
+    "description": "Browser front-end companion to calculator.py (operators + - * /)"
+  },
+  "auth": {
+    "demoUser": {
+      "email": "demo@example.com",
+      "password": "calculator123",
+      "displayName": "Demo User"
+    },
+    "minPasswordLength": 8,
+    "maxAttempts": 5,
+    "redirectUrl": "index.html",
+    "rememberEmailKey": "calc.login.email",
+    "sessionKey": "calc.login.session"
+  },
+  "display": {
+    "precision": 12,
+    "theme": "dark",
+    "historyLimit": 8
+  },
+  "operations": {
+    "+": { "label": "Add", "enabled": true },
+    "-": { "label": "Subtract", "enabled": true },
+    "*": { "label": "Multiply", "enabled": true },
+    "/": { "label": "Divide", "enabled": true }
+  },
+  "server": {
+    "host": "127.0.0.1",
+    "port": 8080,
+    "openBrowser": true
+  },
+  "logging": {
+    "level": "info",
+    "logHistory": true
+  }
+}

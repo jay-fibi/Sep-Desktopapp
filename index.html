@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Simple Calculator</title>
+    <meta
+      name="description"
+      content="Browser companion to calculator.py: add, subtract, multiply and divide."
+    />
+    <!-- Styling rules -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <h1 id="app-title">Simple Calculator</h1>
+      <p class="subtitle">
+        Companion front-end for <code>calculator.py</code> &mdash; operators
+        <code>+</code> <code>-</code> <code>*</code> <code>/</code>
+      </p>
+      <p class="meta"><span id="app-version">v1.0.0</span></p>
+    </header>
+
+    <main class="layout">
+      <section class="card" aria-labelledby="calculator-heading">
+        <h2 id="calculator-heading">Calculate</h2>
+
+        <form id="calculator-form" autocomplete="off" novalidate>
+          <label class="field" for="expression"><span>Expression</span></label>
+          <input
+            id="expression"
+            name="expression"
+            type="text"
+            placeholder="12 + 5"
+            aria-describedby="help hint"
+          />
+
+          <div class="actions">
+            <button type="submit" class="btn btn-primary" data-action="calculate">
+              Calculate
+            </button>
+            <button type="button" class="btn" data-action="clear">Clear</button>
+            <button type="button" class="btn" data-action="toggle-help">Help</button>
+            <button type="button" class="btn" data-action="toggle-theme">Theme</button>
+          </div>
+        </form>
+
+        <p id="message" class="message" role="status" aria-live="polite"></p>
+        <output id="result" class="result" for="expression" aria-label="Result">0</output>
+
+        <div class="keypad" role="group" aria-label="Keypad">
+          <button type="button" class="key" data-token="7">7</button>
+          <button type="button" class="key" data-token="8">8</button>
+          <button type="button" class="key" data-token="9">9</button>
+          <button type="button" class="key key-operator" data-token="/">/</button>
+          <button type="button" class="key" data-token="4">4</button>
+          <button type="button" class="key" data-token="5">5</button>
+          <button type="button" class="key" data-token="6">6</button>
+          <button type="button" class="key key-operator" data-token="*">*</button>
+          <button type="button" class="key" data-token="1">1</button>
+          <button type="button" class="key" data-token="2">2</button>
+          <button type="button" class="key" data-token="3">3</button>
+          <button type="button" class="key key-operator" data-token="-">-</button>
+          <button type="button" class="key" data-token="0">0</button>
+          <button type="button" class="key" data-token=".">.</button>
+          <button type="button" class="key key-operator" data-token="+">+</button>
+          <button type="button" class="key key-danger" data-action="back" aria-label="Backspace">
+            &#9003;
+          </button>
+          <button type="button" class="key key-wide" data-action="clear">Clear</button>
+          <button type="button" class="key key-equals" data-action="calculate">=</button>
+        </div>
+
+        <pre id="help" class="help" hidden></pre>
+        <p id="hint" class="hint">
+          Tip: press <kbd>Enter</kbd> to calculate and <kbd>Esc</kbd> to clear.
+        </p>
+      </section>
+
+      <section class="card" aria-labelledby="history-heading">
+        <h2 id="history-heading">
+          History <span id="history-count" class="badge">0</span>
+        </h2>
+        <ol id="history" class="history"></ol>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <p>
+        Settings are read from <code>config.json</code>; open <code>index.html</code>
+        directly or serve the folder. Demo sign-in page:
+        <a href="login.html">login.html</a>.
+      </p>
+    </footer>
+
+    <!-- Shared helpers first, then the page logic -->
+    <script src="src/utils/format.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
