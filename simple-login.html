@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+  Demo: a simple, self-contained login screen built with HTML + CSS only.
+  It has no JavaScript and does not depend on the calculator app (see
+  login.html for the app's own sign-in page).
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign in - Simple Login Screen</title>
+    <link rel="stylesheet" href="simple-login.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="card" aria-labelledby="login-title">
+        <header class="card__header">
+          <div class="logo" aria-hidden="true">&#9733;</div>
+          <h1 id="login-title">Welcome back</h1>
+          <p class="subtitle">Sign in to continue to your account.</p>
+        </header>
+
+        <form class="form" action="#" method="post">
+          <div class="field">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+            />
+          </div>
+
+          <div class="field">
+            <label for="password">Password</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+              required
+            />
+          </div>
+
+          <div class="row">
+            <label class="checkbox">
+              <input type="checkbox" name="remember" />
+              <span>Remember me</span>
+            </label>
+            <a class="link" href="#">Forgot password?</a>
+          </div>
+
+          <button class="btn" type="submit">Sign in</button>
+        </form>
+
+        <p class="footnote">
+          Don&rsquo;t have an account? <a class="link" href="#">Create one</a>
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
