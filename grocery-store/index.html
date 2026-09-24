@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FreshCart | Organic & Fresh Grocery Delivery</title>
+  <meta name="description" content="FreshCart offers crisp organic produce, artisanal bakery goods, farm-fresh dairy, pantry staples, and same-day delivery." />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="top-bar-tags">
+      <span>🚚 Free delivery on orders over $35</span>
+      <span>⏱️ 2-hour express delivery available</span>
+    </div>
+    <div>
+      Use promo <span class="top-coupon-pill" data-code="FRESH10" title="Click to use FRESH10">FRESH10</span> for 10% off ($20+) or <span class="top-coupon-pill" data-code="SAVE20" title="Click to use SAVE20">SAVE20</span> ($50+)
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand">
+        <div class="brand-icon">🥬</div>
+        <div class="brand-text">Fresh<span>Cart</span></div>
+      </a>
+
+      <!-- Search Bar -->
+      <div class="search-wrapper">
+        <span class="search-icon-left">🔍</span>
+        <input 
+          type="text" 
+          id="search-input" 
+          class="search-input" 
+          placeholder="Search organic apples, fresh bread, dairy, snacks..." 
+          autocomplete="off"
+        />
+        <button type="button" id="search-clear-btn" class="search-clear-btn" aria-label="Clear search">✕</button>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="nav-actions">
+        <button type="button" id="theme-toggle" class="btn-icon" title="Toggle Light/Dark Theme" aria-label="Toggle theme">
+          🌙
+        </button>
+
+        <button type="button" id="nav-favorites-btn" class="btn-icon" title="View Saved Favorites" aria-label="Favorites">
+          ❤️
+          <span id="nav-favorites-count" class="badge">0</span>
+        </button>
+
+        <button type="button" id="nav-orders-btn" class="btn-icon" title="Order History & Tracking" aria-label="Orders">
+          📦
+          <span id="nav-orders-count" class="badge">0</span>
+        </button>
+
+        <button type="button" id="cart-toggle-btn" class="btn-cart-nav" aria-label="Shopping Cart">
+          <span>🛒 Cart</span>
+          <span id="nav-cart-count" class="cart-count-pill">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Category Strip Sub-Nav -->
+  <nav class="category-strip" aria-label="Categories">
+    <div class="category-strip-inner" id="category-strip">
+      <button type="button" class="cat-pill active" data-category="all">🌟 All Aisles</button>
+      <button type="button" class="cat-pill" data-category="produce">🍎 Fresh Produce</button>
+      <button type="button" class="cat-pill" data-category="dairy">🥛 Dairy &amp; Eggs</button>
+      <button type="button" class="cat-pill" data-category="bakery">🥐 Artisan Bakery</button>
+      <button type="button" class="cat-pill" data-category="meat">🥩 Meat &amp; Seafood</button>
+      <button type="button" class="cat-pill" data-category="pantry">🥫 Pantry &amp; Grains</button>
+      <button type="button" class="cat-pill" data-category="beverages">☕ Drinks &amp; Coffee</button>
+      <button type="button" class="cat-pill" data-category="snacks">🍫 Snacks &amp; Treats</button>
+    </div>
+  </nav>
+
+  <!-- Hero Banner -->
+  <section class="hero-banner">
+    <div class="hero-card">
+      <div class="hero-content">
+        <span class="hero-tag">🌱 100% Sustainably Sourced</span>
+        <h1 class="hero-title">Farm-Fresh Groceries Delivered to Your Kitchen</h1>
+        <p class="hero-desc">Crisp seasonal fruits, heirloom vegetables, organic dairy, and freshly baked artisanal bread. Delivered straight to your door in as fast as 2 hours.</p>
+        <div class="hero-features">
+          <div class="hero-feature-item">🌿 Certified Organic</div>
+          <div class="hero-feature-item">🚜 Direct from Local Farmers</div>
+          <div class="hero-feature-item">❄️ Temperature-Controlled Delivery</div>
+        </div>
+      </div>
+      <div class="hero-visual">🥑</div>
+    </div>
+  </section>
+
+  <!-- Main Shopping Section -->
+  <main class="main-layout">
+    <!-- Filters Sidebar -->
+    <aside class="filters-sidebar" id="filters-sidebar">
+      <div class="sidebar-header">
+        <h3 class="sidebar-title">⚙️ Filter &amp; Refine</h3>
+        <button type="button" class="btn-reset-filters" id="reset-filters-btn">Reset All</button>
+      </div>
+
+      <!-- Price Range Slider -->
+      <div class="filter-group">
+        <label for="price-slider" class="filter-label">Max Price</label>
+        <input type="range" id="price-slider" class="price-slider" min="1" max="25" step="0.5" value="25" />
+        <div class="filter-range-display">
+          <span>Up to:</span>
+          <span id="price-display">$25.00</span>
+        </div>
+      </div>
+
+      <!-- Dietary Preference -->
+      <div class="filter-group">
+        <label for="diet-filter" class="filter-label">Dietary Preference</label>
+        <select id="diet-filter" class="sort-select" style="width: 100%;">
+          <option value="all">All Dietary Choices</option>
+          <option value="organic">🌱 Certified Organic</option>
+          <option value="vegan">🥑 100% Vegan</option>
+          <option value="vegetarian">🧀 Vegetarian</option>
+          <option value="gluten-free">🌾 Gluten-Free</option>
+        </select>
+      </div>
+
+      <!-- In Stock Toggle -->
+      <div class="filter-group">
+        <label class="stock-toggle">
+          <span>In-Stock Items Only</span>
+          <input type="checkbox" id="stock-filter" style="display: none;" />
+          <span class="toggle-switch"></span>
+        </label>
+      </div>
+
+      <!-- Free Delivery Promo Card -->
+      <div class="delivery-promo-card">
+        <h4>📦 Fast Local Delivery</h4>
+        <p>Order over <strong>$35</strong> and enjoy completely free delivery. Same-day delivery slots open all week.</p>
+      </div>
+    </aside>
+
+    <!-- Products Feed -->
+    <section class="products-section">
+      <!-- Toolbar -->
+      <div class="products-toolbar">
+        <div class="results-count">
+          Showing <strong id="results-count">0</strong> groceries
+        </div>
+
+        <div class="toolbar-controls">
+          <button type="button" class="btn-mobile-filter" id="mobile-filter-btn">
+            ⚙️ Filters
+          </button>
+
+          <label for="sort-select" style="font-size:0.88rem; font-weight:600; color:var(--text-muted);">Sort By:</label>
+          <select id="sort-select" class="sort-select">
+            <option value="featured">✨ Featured / Popular</option>
+            <option value="price-low">💵 Price: Low to High</option>
+            <option value="price-high">💎 Price: High to Low</option>
+            <option value="rating">⭐ Customer Rating</option>
+            <option value="name">🔤 Alphabetical (A-Z)</option>
+          </select>
+
+          <button type="button" class="btn-admin-add" id="admin-add-btn" title="Add your own custom grocery item">
+            <span>+ Add Item</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="products-grid" id="products-grid">
+        <!-- Rendered by JS -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Cart Slide-over Drawer -->
+  <div class="cart-drawer-overlay" id="cart-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping Cart Drawer">
+    <div class="drawer-header">
+      <div class="drawer-title">
+        <span>🛒 Your Fresh Cart</span>
+      </div>
+      <button type="button" class="btn-close-drawer" id="cart-close-btn" aria-label="Close Cart">✕</button>
+    </div>
+
+    <!-- Free Delivery Progress Meter -->
+    <div class="free-shipping-meter">
+      <div class="meter-text" id="free-delivery-text">Add $35.00 for FREE Delivery</div>
+      <div class="meter-bar">
+        <div class="meter-fill" id="free-delivery-fill" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <!-- Items List -->
+    <div class="cart-items-list" id="cart-items-list">
+      <!-- Rendered by JS -->
+    </div>
+
+    <!-- Drawer Footer -->
+    <div class="drawer-footer">
+      <!-- Coupon input -->
+      <div class="coupon-box">
+        <input type="text" id="coupon-input" class="coupon-input" placeholder="Promo code (e.g. FRESH10)" />
+        <button type="button" id="apply-coupon-btn" class="btn-apply-coupon">Apply</button>
+      </div>
+      <div id="coupon-applied-container"></div>
+
+      <!-- Price Breakdown -->
+      <div class="cart-breakdown">
+        <div class="breakdown-row">
+          <span>Subtotal</span>
+          <span id="cart-subtotal">$0.00</span>
+        </div>
+        <div class="breakdown-row" id="cart-discount-row" style="display: none; color: var(--primary);">
+          <span>Promo Discount</span>
+          <span id="cart-discount">-$0.00</span>
+        </div>
+        <div class="breakdown-row">
+          <span>Estimated Sales Tax (8.25%)</span>
+          <span id="cart-tax">$0.00</span>
+        </div>
+        <div class="breakdown-row">
+          <span>Delivery Fee</span>
+          <span id="cart-delivery">$0.00</span>
+        </div>
+        <div class="breakdown-row total-row">
+          <span>Total</span>
+          <span id="cart-total">$0.00</span>
+        </div>
+      </div>
+
+      <button type="button" class="btn-checkout" id="checkout-btn" disabled>
+        Proceed to Checkout →
+      </button>
+    </div>
+  </aside>
+
+  <!-- Checkout Modal -->
+  <div class="modal-overlay" id="checkout-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>💳 Checkout &amp; Fast Delivery</h3>
+        <button type="button" class="btn-close-drawer" id="checkout-close-btn">✕</button>
+      </div>
+      <div class="modal-body">
+        <form class="checkout-form" id="checkout-form">
+          <div class="checkout-summary-mini">
+            <div style="display:flex; justify-content:space-between;">
+              <span>Order Subtotal:</span>
+              <strong id="checkout-mini-subtotal">$0.00</strong>
+            </div>
+            <div style="display:flex; justify-content:space-between; font-size:1.1rem; color:var(--primary); font-weight:800; border-top:1px dashed var(--border-color); padding-top:6px;">
+              <span>Total to Charge:</span>
+              <strong id="checkout-mini-total">$0.00</strong>
+            </div>
+          </div>
+
+          <h4 style="font-size:0.95rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.5px;">1. Contact Information</h4>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cust-name">Full Name</label>
+              <input type="text" id="cust-name" name="name" class="form-control" placeholder="Jane Doe" required value="Jane Doe" />
+            </div>
+            <div class="form-group">
+              <label for="cust-email">Email Address</label>
+              <input type="email" id="cust-email" name="email" class="form-control" placeholder="jane@example.com" required value="jane@example.com" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="cust-phone">Mobile Phone (for delivery text updates)</label>
+            <input type="tel" id="cust-phone" name="phone" class="form-control" placeholder="(555) 234-5678" required value="(555) 234-5678" />
+          </div>
+
+          <h4 style="font-size:0.95rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.5px; margin-top:8px;">2. Delivery Address</h4>
+          <div class="form-group">
+            <label for="cust-address">Street Address</label>
+            <input type="text" id="cust-address" name="address" class="form-control" placeholder="123 Organic Way, Apt 4B" required value="742 Evergreen Terrace" />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cust-city">City</label>
+              <input type="text" id="cust-city" name="city" class="form-control" placeholder="Seattle" required value="Springfield" />
+            </div>
+            <div class="form-group">
+              <label for="cust-zip">Zip Code</label>
+              <input type="text" id="cust-zip" name="zip" class="form-control" placeholder="98101" required value="97477" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="cust-slot">Select Preferred Delivery Window</label>
+            <select id="cust-slot" name="slot" class="form-control">
+              <option value="Today: Express (within 2 hours)">⚡ Today: Express (within 2 hours)</option>
+              <option value="Today: Evening (5:00 PM - 8:00 PM)" selected>🌅 Today: Evening (5:00 PM - 8:00 PM)</option>
+              <option value="Tomorrow: Morning (8:00 AM - 12:00 PM)">☀️ Tomorrow: Morning (8:00 AM - 12:00 PM)</option>
+              <option value="Tomorrow: Afternoon (1:00 PM - 5:00 PM)">🌤️ Tomorrow: Afternoon (1:00 PM - 5:00 PM)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="cust-instructions">Delivery Instructions (optional)</label>
+            <input type="text" id="cust-instructions" name="instructions" class="form-control" placeholder="Leave at front porch door, ring bell..." value="Leave at front porch, thank you!" />
+          </div>
+
+          <h4 style="font-size:0.95rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.5px; margin-top:8px;">3. Payment Method</h4>
+          <div style="background:var(--bg-muted); padding:12px; border-radius:var(--radius-sm); font-size:0.9rem; display:flex; align-items:center; gap:8px;">
+            <span>💳</span>
+            <span>Card ending in <strong>4242</strong> (Test / Simulated Payment)</span>
+          </div>
+
+          <button type="submit" class="btn-checkout" style="margin-top:10px;">
+            Place Order Now 🚀
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Order Success Modal -->
+  <div class="modal-overlay" id="order-success-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Order Placed!</h3>
+        <button type="button" class="btn-close-drawer" id="order-success-close-btn">✕</button>
+      </div>
+      <div class="modal-body order-success-body">
+        <div class="order-success-icon">🎉</div>
+        <h2 style="margin-bottom:8px;">Thank You for Your Order!</h2>
+        <p style="color:var(--text-muted); margin-bottom:12px;">Your fresh organic order has been received and our team is hand-picking your items.</p>
+        <div class="order-badge-id" id="order-success-id">#FC-123456</div>
+        <p style="font-size:0.92rem; margin-bottom:20px;">Estimated Arrival: <strong id="order-success-delivery">Today: Express</strong></p>
+        <button type="button" class="btn-checkout" id="order-success-done-btn">Back to Fresh Aisles</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Detail Modal -->
+  <div class="modal-overlay" id="detail-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Product Details</h3>
+        <button type="button" class="btn-close-drawer" id="detail-close-btn">✕</button>
+      </div>
+      <div class="modal-body" id="detail-container">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Order History Modal -->
+  <div class="modal-overlay" id="orders-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>📦 Your Order History</h3>
+        <button type="button" class="btn-close-drawer" id="orders-close-btn">✕</button>
+      </div>
+      <div class="modal-body" id="orders-list-container">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Product Modal (Admin / Inventory Manager) -->
+  <div class="modal-overlay" id="add-product-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>🥬 Add New Grocery Item</h3>
+        <button type="button" class="btn-close-drawer" id="add-product-close-btn">✕</button>
+      </div>
+      <div class="modal-body">
+        <form class="checkout-form" id="add-product-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="prod-name">Item Name</label>
+              <input type="text" id="prod-name" name="name" class="form-control" placeholder="e.g. Organic Strawberries" required />
+            </div>
+            <div class="form-group">
+              <label for="prod-category">Category</label>
+              <select id="prod-category" name="category" class="form-control" required>
+                <option value="produce">Fresh Produce</option>
+                <option value="dairy">Dairy &amp; Eggs</option>
+                <option value="bakery">Artisan Bakery</option>
+                <option value="meat">Meat &amp; Seafood</option>
+                <option value="pantry">Pantry &amp; Grains</option>
+                <option value="beverages">Drinks &amp; Coffee</option>
+                <option value="snacks">Snacks &amp; Treats</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="prod-price">Price ($)</label>
+              <input type="number" id="prod-price" name="price" step="0.01" min="0.5" class="form-control" placeholder="4.99" required />
+            </div>
+            <div class="form-group">
+              <label for="prod-unit">Unit / Package Size</label>
+              <input type="text" id="prod-unit" name="unit" class="form-control" placeholder="1 lb container, per lb, etc." required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="prod-emoji">Emoji Icon</label>
+              <input type="text" id="prod-emoji" name="image" class="form-control" placeholder="🍓, 🥝, 🧀, etc." value="🍓" />
+            </div>
+            <div class="form-group">
+              <label for="prod-stock">Initial Stock Quantity</label>
+              <input type="number" id="prod-stock" name="stock" class="form-control" value="25" min="1" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="prod-origin">Origin / Farm</label>
+              <input type="text" id="prod-origin" name="origin" class="form-control" placeholder="California, USA" value="Local Organic Farm" />
+            </div>
+            <div class="form-group">
+              <label for="prod-badge">Badge (Optional)</label>
+              <input type="text" id="prod-badge" name="badge" class="form-control" placeholder="New, Seasonal, Staff Pick" value="New" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="prod-desc">Item Description</label>
+            <textarea id="prod-desc" name="description" class="form-control" rows="2" placeholder="Describe flavor, freshness, certifications..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Dietary Labels</label>
+            <div style="display:flex; gap:16px; flex-wrap:wrap; margin-top:4px;">
+              <label style="display:flex; align-items:center; gap:6px; font-weight:normal;">
+                <input type="checkbox" name="dietary" value="organic" checked /> Organic
+              </label>
+              <label style="display:flex; align-items:center; gap:6px; font-weight:normal;">
+                <input type="checkbox" name="dietary" value="vegan" /> Vegan
+              </label>
+              <label style="display:flex; align-items:center; gap:6px; font-weight:normal;">
+                <input type="checkbox" name="dietary" value="vegetarian" /> Vegetarian
+              </label>
+              <label style="display:flex; align-items:center; gap:6px; font-weight:normal;">
+                <input type="checkbox" name="dietary" value="gluten-free" /> Gluten-Free
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-checkout" style="margin-top:12px;">Save Item to Catalog</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Footer -->
+  <footer class="page-footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <div class="brand" style="margin-bottom:12px;">
+          <div class="brand-icon">🥬</div>
+          <div class="brand-text">Fresh<span>Cart</span></div>
+        </div>
+        <p>Your neighborhood organic grocery store, delivering crisp seasonal produce, ethically raised proteins, and artisanal goods right to your doorstep.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Aisles</h4>
+        <ul>
+          <li><a href="#" data-footer-category="produce">Fresh Produce</a></li>
+          <li><a href="#" data-footer-category="dairy">Dairy &amp; Eggs</a></li>
+          <li><a href="#" data-footer-category="bakery">Artisan Bakery</a></li>
+          <li><a href="#" data-footer-category="meat">Meat &amp; Seafood</a></li>
+          <li><a href="#" data-footer-category="pantry">Pantry Staples</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Customer Care</h4>
+        <ul>
+          <li><a href="#">Delivery Coverage Map</a></li>
+          <li><a href="#">Freshness Guarantee</a></li>
+          <li><a href="#">Return &amp; Refund Policy</a></li>
+          <li><a href="#">Contact Support</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Special Offers</h4>
+        <p>Use code <strong>FRESH10</strong> for 10% off any order over $20. Free local doorstep delivery applies on all carts over $35!</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>&copy; 2025 FreshCart Market Inc. All rights reserved.</div>
+      <div>Designed for clean living, local agriculture, and healthy households.</div>
+    </div>
+  </footer>
+
+  <!-- App Scripts -->
+  <script src="data/products-data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

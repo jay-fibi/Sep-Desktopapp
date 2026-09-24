@@ -1,0 +1,501 @@
+/* AUTO-GENERATED from products.json - do not edit by hand.
+ * Regenerate with: node scripts/build-data.js */
+window.INITIAL_PRODUCTS = [
+  {
+    "id": "prod_1",
+    "name": "Fresh Organic Bananas",
+    "category": "produce",
+    "price": 1.99,
+    "unit": "bunch (approx 2 lbs)",
+    "image": "🍌",
+    "description": "Sweet, ripe organic bananas sourced from fair-trade farms.",
+    "rating": 4.8,
+    "reviewsCount": 124,
+    "stock": 45,
+    "origin": "Ecuador",
+    "dietary": [
+      "organic",
+      "vegan",
+      "gluten-free"
+    ],
+    "badge": "Best Seller"
+  },
+  {
+    "id": "prod_2",
+    "name": "Honeycrisp Apples",
+    "category": "produce",
+    "price": 3.49,
+    "unit": "per lb",
+    "image": "🍎",
+    "description": "Crisp, sweet, and slightly tart apples freshly picked from local orchards.",
+    "rating": 4.9,
+    "reviewsCount": 89,
+    "stock": 30,
+    "origin": "Washington, USA",
+    "dietary": [
+      "organic",
+      "vegan",
+      "gluten-free"
+    ],
+    "badge": "Fresh Pick"
+  },
+  {
+    "id": "prod_3",
+    "name": "Organic Hass Avocados",
+    "category": "produce",
+    "price": 4.99,
+    "unit": "pack of 4",
+    "image": "🥑",
+    "description": "Perfect creamy avocados, great for guacamole, salads, and toasts.",
+    "rating": 4.7,
+    "reviewsCount": 62,
+    "stock": 25,
+    "origin": "Mexico",
+    "dietary": [
+      "organic",
+      "vegan",
+      "gluten-free"
+    ],
+    "badge": "Popular"
+  },
+  {
+    "id": "prod_4",
+    "name": "Baby Spinach & Arugula Mix",
+    "category": "produce",
+    "price": 2.99,
+    "unit": "10 oz tub",
+    "image": "🥗",
+    "description": "Pre-washed tender baby greens blend ready for gourmet salads.",
+    "rating": 4.6,
+    "reviewsCount": 44,
+    "stock": 18,
+    "origin": "California, USA",
+    "dietary": [
+      "organic",
+      "vegan",
+      "gluten-free"
+    ]
+  },
+  {
+    "id": "prod_5",
+    "name": "Vine-Ripened Roma Tomatoes",
+    "category": "produce",
+    "price": 2.29,
+    "unit": "per lb",
+    "image": "🍅",
+    "description": "Plump and juicy tomatoes perfect for cooking, sauces, and fresh slices.",
+    "rating": 4.5,
+    "reviewsCount": 38,
+    "stock": 40,
+    "origin": "Local Greenhouse",
+    "dietary": [
+      "vegan",
+      "gluten-free"
+    ]
+  },
+  {
+    "id": "prod_6",
+    "name": "Whole Vitamin D Milk",
+    "category": "dairy",
+    "price": 3.79,
+    "unit": "1 Gallon",
+    "image": "🥛",
+    "description": "Grade A pasteurized whole milk enriched with Vitamin D.",
+    "rating": 4.8,
+    "reviewsCount": 110,
+    "stock": 22,
+    "origin": "Sunny Valley Dairy",
+    "dietary": [
+      "gluten-free",
+      "vegetarian"
+    ],
+    "badge": "Essential"
+  },
+  {
+    "id": "prod_7",
+    "name": "Pasture-Raised Large Eggs",
+    "category": "dairy",
+    "price": 4.49,
+    "unit": "12 count",
+    "image": "🥚",
+    "description": "Certified humane, rich golden yolks from free-roaming hens.",
+    "rating": 4.9,
+    "reviewsCount": 156,
+    "stock": 35,
+    "origin": "Happy Hens Farm",
+    "dietary": [
+      "gluten-free",
+      "vegetarian"
+    ],
+    "badge": "Top Rated"
+  },
+  {
+    "id": "prod_8",
+    "name": "Greek Whole Milk Plain Yogurt",
+    "category": "dairy",
+    "price": 4.29,
+    "unit": "32 oz",
+    "image": "🥣",
+    "description": "Creamy, triple-strained Greek yogurt packed with 18g protein per serving.",
+    "rating": 4.7,
+    "reviewsCount": 77,
+    "stock": 15,
+    "origin": "Dairy Co.",
+    "dietary": [
+      "gluten-free",
+      "vegetarian"
+    ]
+  },
+  {
+    "id": "prod_9",
+    "name": "Aged Sharp Cheddar Cheese",
+    "category": "dairy",
+    "price": 5.49,
+    "unit": "8 oz block",
+    "image": "🧀",
+    "description": "Aged over 12 months for bold, complex flavor and sharp crystalline texture.",
+    "rating": 4.8,
+    "reviewsCount": 63,
+    "stock": 20,
+    "origin": "Vermont, USA",
+    "dietary": [
+      "gluten-free",
+      "vegetarian"
+    ]
+  },
+  {
+    "id": "prod_10",
+    "name": "European Unsalted Butter",
+    "category": "dairy",
+    "price": 3.99,
+    "unit": "1 lb (4 sticks)",
+    "image": "🧈",
+    "description": "82% butterfat premium cultured butter for supreme baking and cooking.",
+    "rating": 4.9,
+    "reviewsCount": 51,
+    "stock": 28,
+    "origin": "Wisconsin, USA",
+    "dietary": [
+      "vegetarian",
+      "gluten-free"
+    ]
+  },
+  {
+    "id": "prod_11",
+    "name": "Artisan Sourdough Boule",
+    "category": "bakery",
+    "price": 4.99,
+    "unit": "1 loaf",
+    "image": "🍞",
+    "description": "Crispy golden crust with a soft, tangy fermented crumb baked daily.",
+    "rating": 4.8,
+    "reviewsCount": 94,
+    "stock": 12,
+    "origin": "In-house Bakery",
+    "dietary": [
+      "vegan"
+    ],
+    "badge": "Freshly Baked"
+  },
+  {
+    "id": "prod_12",
+    "name": "All-Butter Flaky Croissants",
+    "category": "bakery",
+    "price": 5.29,
+    "unit": "pack of 4",
+    "image": "🥐",
+    "description": "Traditional French croissants layered with pure creamery butter.",
+    "rating": 4.9,
+    "reviewsCount": 81,
+    "stock": 14,
+    "origin": "In-house Bakery",
+    "dietary": [
+      "vegetarian"
+    ],
+    "badge": "Bakery Favorite"
+  },
+  {
+    "id": "prod_13",
+    "name": "Everything Bagels",
+    "category": "bakery",
+    "price": 3.99,
+    "unit": "pack of 6",
+    "image": "🥯",
+    "description": "Kettle-boiled NY style bagels topped with sesame, onion, and poppy seeds.",
+    "rating": 4.6,
+    "reviewsCount": 49,
+    "stock": 19,
+    "origin": "In-house Bakery",
+    "dietary": [
+      "vegan"
+    ]
+  },
+  {
+    "id": "prod_14",
+    "name": "Boneless Chicken Breasts",
+    "category": "meat",
+    "price": 8.99,
+    "unit": "approx 1.5 lbs",
+    "image": "🍗",
+    "description": "All-natural, antibiotic-free chicken breasts trimmed and ready to cook.",
+    "rating": 4.7,
+    "reviewsCount": 88,
+    "stock": 16,
+    "origin": "Heritage Farms",
+    "dietary": [
+      "gluten-free"
+    ],
+    "badge": "High Protein"
+  },
+  {
+    "id": "prod_15",
+    "name": "Grass-Fed Ground Beef (85/15)",
+    "category": "meat",
+    "price": 7.49,
+    "unit": "1 lb",
+    "image": "🥩",
+    "description": "100% grass-fed ground beef with optimal juiciness and rich beef flavor.",
+    "rating": 4.8,
+    "reviewsCount": 105,
+    "stock": 22,
+    "origin": "Texas Grasslands",
+    "dietary": [
+      "gluten-free"
+    ]
+  },
+  {
+    "id": "prod_16",
+    "name": "Wild Alaskan Salmon Fillet",
+    "category": "meat",
+    "price": 12.99,
+    "unit": "12 oz fillet",
+    "image": "🐟",
+    "description": "Sustainably harvested wild salmon rich in heart-healthy Omega-3 fatty acids.",
+    "rating": 4.9,
+    "reviewsCount": 73,
+    "stock": 10,
+    "origin": "Alaska, USA",
+    "dietary": [
+      "gluten-free"
+    ],
+    "badge": "Wild Caught"
+  },
+  {
+    "id": "prod_17",
+    "name": "Extra Virgin Olive Oil",
+    "category": "pantry",
+    "price": 9.99,
+    "unit": "750 ml bottle",
+    "image": "🫒",
+    "description": "Cold-pressed first harvest olive oil with rich, fruity notes and smooth finish.",
+    "rating": 4.9,
+    "reviewsCount": 112,
+    "stock": 30,
+    "origin": "Peloponnese, Greece",
+    "dietary": [
+      "organic",
+      "vegan",
+      "gluten-free"
+    ],
+    "badge": "Pantry Staple"
+  },
+  {
+    "id": "prod_18",
+    "name": "Organic Jasmine Rice",
+    "category": "pantry",
+    "price": 4.99,
+    "unit": "2 lb bag",
+    "image": "🍚",
+    "description": "Fragrant long-grain white jasmine rice naturally aromatic.",
+    "rating": 4.7,
+    "reviewsCount": 65,
+    "stock": 35,
+    "origin": "Thailand",
+    "dietary": [
+      "organic",
+      "vegan",
+      "gluten-free"
+    ]
+  },
+  {
+    "id": "prod_19",
+    "name": "Bronze-Cut Spaghetti Pasta",
+    "category": "pantry",
+    "price": 2.49,
+    "unit": "1 lb box",
+    "image": "🍝",
+    "description": "Traditional Italian durum wheat semolina pasta with sauce-holding texture.",
+    "rating": 4.8,
+    "reviewsCount": 54,
+    "stock": 40,
+    "origin": "Naples, Italy",
+    "dietary": [
+      "vegan",
+      "vegetarian"
+    ]
+  },
+  {
+    "id": "prod_20",
+    "name": "Organic Marinara Sauce",
+    "category": "pantry",
+    "price": 3.99,
+    "unit": "24 oz jar",
+    "image": "🥫",
+    "description": "Slow-simmered vine tomatoes, garlic, extra virgin olive oil, and sweet basil.",
+    "rating": 4.7,
+    "reviewsCount": 48,
+    "stock": 25,
+    "origin": "California, USA",
+    "dietary": [
+      "organic",
+      "vegan",
+      "gluten-free"
+    ]
+  },
+  {
+    "id": "prod_21",
+    "name": "Dark Roast Coffee Beans",
+    "category": "beverages",
+    "price": 9.49,
+    "unit": "12 oz bag",
+    "image": "☕",
+    "description": "Rich, smoky dark roast coffee with dark chocolate and caramel notes.",
+    "rating": 4.9,
+    "reviewsCount": 134,
+    "stock": 24,
+    "origin": "Colombia & Ethiopia",
+    "dietary": [
+      "organic",
+      "vegan",
+      "gluten-free"
+    ],
+    "badge": "Staff Pick"
+  },
+  {
+    "id": "prod_22",
+    "name": "Cold-Pressed Orange Juice",
+    "category": "beverages",
+    "price": 4.49,
+    "unit": "52 fl oz",
+    "image": "🍊",
+    "description": "100% pure squeezed Florida orange juice with light pulp and no added sugar.",
+    "rating": 4.8,
+    "reviewsCount": 92,
+    "stock": 18,
+    "origin": "Florida, USA",
+    "dietary": [
+      "organic",
+      "vegan",
+      "gluten-free"
+    ]
+  },
+  {
+    "id": "prod_23",
+    "name": "Sparkling Lemon Water",
+    "category": "beverages",
+    "price": 5.99,
+    "unit": "8-pack (12 fl oz)",
+    "image": "🥤",
+    "description": "Crisp bubbly natural spring water infused with a crisp twist of lemon.",
+    "rating": 4.6,
+    "reviewsCount": 41,
+    "stock": 27,
+    "origin": "France",
+    "dietary": [
+      "vegan",
+      "gluten-free"
+    ]
+  },
+  {
+    "id": "prod_24",
+    "name": "Ceremonial Matcha Green Tea",
+    "category": "beverages",
+    "price": 11.99,
+    "unit": "30g tin",
+    "image": "🍵",
+    "description": "Ceremonial grade stone-ground Uji matcha loaded with clean, calm energy.",
+    "rating": 4.9,
+    "reviewsCount": 68,
+    "stock": 15,
+    "origin": "Kyoto, Japan",
+    "dietary": [
+      "organic",
+      "vegan",
+      "gluten-free"
+    ],
+    "badge": "Premium"
+  },
+  {
+    "id": "prod_25",
+    "name": "Kettle Cooked Sea Salt Chips",
+    "category": "snacks",
+    "price": 3.29,
+    "unit": "8 oz bag",
+    "image": "🥔",
+    "description": "Extra crunchy thick-cut potato chips cooked in small batches and sea-salted.",
+    "rating": 4.7,
+    "reviewsCount": 59,
+    "stock": 33,
+    "origin": "Oregon, USA",
+    "dietary": [
+      "vegan",
+      "gluten-free"
+    ]
+  },
+  {
+    "id": "prod_26",
+    "name": "Raw California Almonds",
+    "category": "snacks",
+    "price": 6.99,
+    "unit": "1 lb bag",
+    "image": "🥜",
+    "description": "Unsalted, wholesome whole raw almonds for healthy on-the-go snacking.",
+    "rating": 4.8,
+    "reviewsCount": 82,
+    "stock": 26,
+    "origin": "California, USA",
+    "dietary": [
+      "organic",
+      "vegan",
+      "gluten-free"
+    ],
+    "badge": "Heart Healthy"
+  },
+  {
+    "id": "prod_27",
+    "name": "72% Dark Chocolate Salt Bar",
+    "category": "snacks",
+    "price": 3.79,
+    "unit": "3.5 oz bar",
+    "image": "🍫",
+    "description": "Single-origin dark chocolate bar sprinkled with delicate sea salt crystals.",
+    "rating": 4.9,
+    "reviewsCount": 115,
+    "stock": 38,
+    "origin": "Belgium",
+    "dietary": [
+      "vegan",
+      "gluten-free"
+    ],
+    "badge": "Indulgent"
+  },
+  {
+    "id": "prod_28",
+    "name": "Fresh Organic Blueberries",
+    "category": "produce",
+    "price": 3.99,
+    "unit": "1 pint (11 oz)",
+    "image": "🫐",
+    "description": "Sweet, plump organic blueberries packed with vital antioxidants.",
+    "rating": 4.8,
+    "reviewsCount": 71,
+    "stock": 20,
+    "origin": "Oregon, USA",
+    "dietary": [
+      "organic",
+      "vegan",
+      "gluten-free"
+    ],
+    "badge": "Superfood"
+  }
+];
