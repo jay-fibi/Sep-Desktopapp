@@ -64,6 +64,10 @@ setup:
 
 The APK is produced at `app/build/outputs/apk/debug/app-debug.apk`.
 
+A GitHub Actions workflow (`.github/workflows/pingpong-android.yml`) runs the
+unit tests and builds the debug APK automatically on every push that touches
+`PingPongGame/`; the APK is uploaded as a build artifact.
+
 ## Requirements
 
 - **minSdk**: 26 (Android 8.0)

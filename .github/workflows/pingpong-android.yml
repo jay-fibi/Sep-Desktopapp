@@ -1,0 +1,46 @@
+name: Ping Pong Android CI
+
+on:
+  push:
+    paths:
+      - 'PingPongGame/**'
+      - '.github/workflows/pingpong-android.yml'
+  pull_request:
+    paths:
+      - 'PingPongGame/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: PingPongGame
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Grant gradlew execute permission
+        run: chmod +x gradlew
+
+      - name: Run unit tests
+        run: ./gradlew testDebugUnitTest
+
+      - name: Build debug APK
+        run: ./gradlew assembleDebug
+
+      - name: Upload debug APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: pingpong-debug-apk
+          path: PingPongGame/app/build/outputs/apk/debug/app-debug.apk
+          retention-days: 14
