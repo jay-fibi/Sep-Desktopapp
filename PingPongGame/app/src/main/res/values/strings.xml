@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Ping Pong</string>
+    <string name="app_name">Jacks PingPong</string>
+    <string name="brand_name">JACK</string>
+    <string name="brand_byline">by Jack</string>
     <string name="tap_to_start">Tap to Start</string>
     <string name="game_over">Game Over</string>
     <string name="you_win">You Win! 🏆</string>

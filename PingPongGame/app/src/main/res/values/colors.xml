@@ -2,10 +2,16 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="table_dark">#FF0B3D2E</color>
+
+    <!-- Jack brand palette: royal navy + gold -->
+    <color name="brand_primary">#FF14264C</color>
+    <color name="brand_primary_dark">#FF0B1530</color>
+    <color name="brand_accent">#FFFFC107</color>
+
+    <color name="table_dark">#FF14264C</color>
     <color name="table_line">#CCFFFFFF</color>
-    <color name="player_paddle">#FF4CAF50</color>
+    <color name="player_paddle">#FFFFC107</color>
     <color name="ai_paddle">#FFF44336</color>
-    <color name="ball_color">#FFFFC107</color>
+    <color name="ball_color">#FFFFFFFF</color>
     <color name="score_text">#FFFFFFFF</color>
 </resources>

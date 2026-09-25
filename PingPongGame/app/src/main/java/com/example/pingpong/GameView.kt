@@ -114,8 +114,21 @@ class GameView @JvmOverloads constructor(
         textAlign = Paint.Align.CENTER
     }
     private val overlayPaint = Paint().apply {
-        color = Color.argb(140, 0, 0, 0)
+        color = Color.argb(150, 6, 12, 26)
         style = Paint.Style.FILL
+    }
+    private val brandCirclePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        color = ContextCompat.getColor(context, R.color.brand_accent)
+        style = Paint.Style.FILL
+    }
+    private val brandLetterPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        color = ContextCompat.getColor(context, R.color.brand_primary)
+        textAlign = Paint.Align.CENTER
+        isFakeBoldText = true
+    }
+    private val bylinePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        color = ContextCompat.getColor(context, R.color.brand_accent)
+        textAlign = Paint.Align.CENTER
     }
 
     // --- Layout ---
@@ -156,6 +169,8 @@ class GameView @JvmOverloads constructor(
         scorePaint.textSize = w * 0.12f
         messagePaint.textSize = w * 0.085f
         subMessagePaint.textSize = w * 0.045f
+        brandLetterPaint.textSize = w * 0.14f
+        bylinePaint.textSize = w * 0.05f
 
         applyDifficulty()
         ball.reset(w / 2f, h / 2f, serveDown = true)
@@ -365,11 +380,7 @@ class GameView @JvmOverloads constructor(
         drawScores(canvas)
         drawEntities(canvas)
         when (state) {
-            State.READY -> drawOverlay(
-                canvas,
-                context.getString(R.string.app_name),
-                context.getString(R.string.tap_to_start)
-            )
+            State.READY -> drawReadyOverlay(canvas)
             State.PAUSED -> drawOverlay(
                 canvas,
                 context.getString(R.string.paused),
@@ -427,6 +438,38 @@ class GameView @JvmOverloads constructor(
         canvas.drawRoundRect(
             RectF(aiPaddle.left, aiPaddle.top, aiPaddle.right, aiPaddle.bottom),
             corner, corner, aiPaint
+        )
+    }
+
+    /** READY screen: brand logo (gold badge with "J"), title and byline. */
+    private fun drawReadyOverlay(canvas: Canvas) {
+        canvas.drawRect(0f, 0f, width.toFloat(), height.toFloat(), overlayPaint)
+        val centerX = width / 2f
+        val centerY = height / 2f
+
+        // Brand badge: gold circle with a navy "J".
+        val logoRadius = width * 0.11f
+        val logoY = centerY - messagePaint.textSize * 1.7f
+        canvas.drawCircle(centerX, logoY, logoRadius, brandCirclePaint)
+        val initial = context.getString(R.string.brand_name).first().toString()
+        canvas.drawText(
+            initial, centerX,
+            logoY - (brandLetterPaint.descent() + brandLetterPaint.ascent()) / 2f,
+            brandLetterPaint
+        )
+
+        canvas.drawText(
+            context.getString(R.string.app_name), centerX,
+            centerY - messagePaint.textSize * 0.1f, messagePaint
+        )
+        canvas.drawText(
+            context.getString(R.string.brand_byline), centerX,
+            centerY + bylinePaint.textSize * 1.2f, bylinePaint
+        )
+        canvas.drawText(
+            context.getString(R.string.tap_to_start), centerX,
+            centerY + bylinePaint.textSize * 1.2f + subMessagePaint.textSize * 1.8f,
+            subMessagePaint
         )
     }
 

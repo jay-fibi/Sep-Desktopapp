@@ -1,8 +1,16 @@
-# Ping Pong Game for Android 🏓
+# Jacks PingPong for Android 🏓
 
-A classic ping pong (table tennis) game for Android, written in **Kotlin**.
-Play against an AI opponent — drag your finger to move the paddle, angle
-your returns, and be the first to score 5 points.
+A classic ping pong (table tennis) game for Android, written in **Kotlin**
+and branded **by Jack** — royal navy & gold identity with the signature
+gold "J" monogram launcher icon. Play against an AI opponent: drag your
+finger to move the paddle, angle your returns, and be the first to score
+5 points.
+
+## Branding
+
+- 🎨 **Jack brand palette** — royal navy `#14264C` + gold `#FFC107`
+- 🥇 **Gold "J" monogram** adaptive launcher icon with paddle & ball
+- 🏅 **Branded start screen** — gold badge with "J", "by Jack" byline
 
 ## Features
 
@@ -27,15 +35,15 @@ PingPongGame/
 │   └── src/main/
 │       ├── AndroidManifest.xml
 │       ├── java/com/example/pingpong/
-│       │   ├── MainActivity.kt   # Lifecycle, immersive mode, options menu
-│       │   ├── GameView.kt       # Game loop, physics, AI, rendering, input
+│       │   ├── MainActivity.kt   # Lifecycle, immersive mode, settings dialog
+│       │   ├── GameView.kt       # Game loop, physics, AI, rendering, branding
 │       │   ├── Ball.kt           # Ball entity: velocity, bounce physics
 │       │   ├── Paddle.kt         # Paddle entity: movement + collision
 │       │   └── SoundManager.kt   # Procedurally generated sound effects
 │       └── res/
 │           ├── layout/activity_main.xml
 │           ├── values/           # strings, colors, themes
-│           └── mipmap-*/         # adaptive launcher icon
+│           └── mipmap-*/         # adaptive launcher icon (Jack "J" monogram)
 ├── build.gradle.kts              # Top-level build file
 ├── settings.gradle.kts
 └── gradle.properties
@@ -44,7 +52,7 @@ PingPongGame/
 ## How to play
 
 1. **Tap** the screen to start the match.
-2. **Drag** left/right to move the green paddle (bottom).
+2. **Drag** left/right to move the gold paddle (bottom).
 3. Hit the ball past the red AI paddle (top) to score.
 4. The spot where the ball hits your paddle controls the return angle.
 5. First to **5 points** wins. Tap to play again.
@@ -66,6 +74,8 @@ setup:
 ```
 
 The APK is produced at `app/build/outputs/apk/debug/app-debug.apk`.
+A prebuilt APK is also available in the `Ready APK/` directory at the
+repository root.
 
 ## Requirements
 
