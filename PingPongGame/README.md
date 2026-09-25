@@ -60,10 +60,12 @@ setup:
 
 # Install on a connected device / emulator
 ./gradlew installDebug
+
+# Run unit tests
+./gradlew testDebugUnitTest
 ```
 
 The APK is produced at `app/build/outputs/apk/debug/app-debug.apk`.
-
 
 ## Requirements
 
