@@ -484,7 +484,8 @@
 
   document.addEventListener('keydown', (e) => {
     const tag = document.activeElement && document.activeElement.tagName;
-    if (tag === 'INPUT' || tag === 'SELECT' || tag === 'TEXTAREA') return;
+    // Skip when a control has focus — Space already activates buttons natively.
+    if (tag === 'INPUT' || tag === 'SELECT' || tag === 'TEXTAREA' || tag === 'BUTTON') return;
     if (e.code === 'Space') {
       e.preventDefault();
       el.startBtn.click();
