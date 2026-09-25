@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.JacksCalc" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/jack_primary</item>
+        <item name="colorPrimaryVariant">@color/jack_primary_light</item>
+        <item name="colorSecondary">@color/jack_accent</item>
+        <item name="android:statusBarColor">@color/jack_primary</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:colorBackground">@color/jack_bg</item>
+    </style>
+</resources>

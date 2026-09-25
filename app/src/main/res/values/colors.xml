@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Jacks Calc Branding Colors -->
+    <color name="jack_primary">#0F172A</color>
+    <color name="jack_primary_light">#1E293B</color>
+    <color name="jack_accent">#3B82F6</color>
+    <color name="jack_accent_gold">#F59E0B</color>
+    <color name="jack_accent_light">#60A5FA</color>
+    <color name="jack_bg">#F8FAFC</color>
+    <color name="jack_card_bg">#FFFFFF</color>
+    <color name="jack_card_border">#E2E8F0</color>
+
+    <color name="text_primary">#0F172A</color>
+    <color name="text_secondary">#64748B</color>
+    <color name="text_hint">#94A3B8</color>
+    <color name="text_accent">#2563EB</color>
+
+    <color name="calc_result_green">#10B981</color>
+    <color name="calc_result_bg">#F1F5F9</color>
+    <color name="calc_error">#EF4444</color>
+    <color name="calc_toolbar_tint">#FFFFFF</color>
+
+    <!-- Keypad Colors -->
+    <color name="key_num_bg">#FFFFFF</color>
+    <color name="key_num_text">#1E293B</color>
+    <color name="key_op_bg">#EEF2FF</color>
+    <color name="key_op_text">#4F46E5</color>
+    <color name="key_action_bg">#3B82F6</color>
+    <color name="key_action_text">#FFFFFF</color>
+</resources>

@@ -17,3 +17,15 @@ __pycache__/
 
 # Node
 node_modules/
+
+# Local tools & SDKs
+tools/
+
+# Android / Gradle Build
+.gradle/
+build/
+app/build/
+local.properties
+
+# Do NOT ignore the requested deliverable APK directory
+!Ready APK/*.apk

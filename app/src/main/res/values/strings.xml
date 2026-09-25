@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Jacks calc</string>
+    <string name="app_tagline">Smart Notes &amp; Calculations</string>
+    <string name="app_subtitle">Write figures, get live calculations</string>
+    <string name="new_note">New Note</string>
+    <string name="save_note">Save</string>
+    <string name="all_notes">Notes Library</string>
+    <string name="clear_note">Clear</string>
+    <string name="sample_note">Demo Note</string>
+    <string name="share_note">Share</string>
+    <string name="grand_total_label">TOTAL</string>
+    <string name="untitled_note">Untitled Note</string>
+    <string name="enter_title">Note Title (optional)</string>
+    <string name="editor_placeholder">Start typing your notes and numbers...\n\nExamples:\nBreakfast: 12.50\nCoffee: 4.75 * 2\nLunch: 25.00\ntotal\n\nSalary = 4500\nRent = 1200\nSavings = Salary * 20%</string>
+</resources>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Background squircle/card -->
+    <path
+        android:fillColor="#0F172A"
+        android:pathData="M 0,0 L 108,0 L 108,108 L 0,108 Z" />
+
+    <!-- Notepad background page -->
+    <path
+        android:fillColor="#1E293B"
+        android:pathData="M 18,14 C 18,10 22,6 26,6 L 82,6 C 86,6 90,10 90,14 L 90,94 C 90,98 86,102 82,102 L 26,102 C 22,102 18,98 18,94 Z" />
+
+    <!-- Notebook subtle top header accent -->
+    <path
+        android:fillColor="#2563EB"
+        android:pathData="M 26,6 L 82,6 C 86,6 90,10 90,14 L 90,26 L 18,26 L 18,14 C 18,10 22,6 26,6 Z" />
+
+    <!-- Note lines representing written notes -->
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M 28,38 L 56,38 C 57.5,38 57.5,42 56,42 L 28,42 C 26.5,42 26.5,38 28,38 Z" />
+    <path
+        android:fillColor="#64748B"
+        android:pathData="M 28,50 L 52,50 C 53.5,50 53.5,54 52,54 L 28,54 C 26.5,54 26.5,50 28,50 Z" />
+    <path
+        android:fillColor="#64748B"
+        android:pathData="M 28,62 L 48,62 C 49.5,62 49.5,66 48,66 L 28,66 C 26.5,66 26.5,62 28,62 Z" />
+
+    <!-- Jack's "J" Monogram stylized with Math Calculator Elements -->
+    <!-- Gold/Yellow stylized 'J' on the right with calculation badge -->
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M 62,34 L 78,34 C 80,34 82,36 82,38 L 82,66 C 82,75 75,80 66,80 C 59,80 54,76 53,71 C 52,69 54,67 56,67 C 58,67 59,68 60,69 C 61.5,71.5 63.5,73 66,73 C 71,73 74,70 74,65 L 74,42 L 62,42 C 60,42 60,34 62,34 Z" />
+
+    <!-- Math symbol: Equals sign in vibrant cyan/green badge at bottom right -->
+    <path
+        android:fillColor="#10B981"
+        android:pathData="M 36,78 L 48,78 C 49,78 49,81 48,81 L 36,81 C 35,81 35,78 36,78 Z M 36,84 L 48,84 C 49,84 49,87 48,87 L 36,87 C 35,87 35,84 36,84 Z" />
+
+    <!-- Math symbol: Plus icon -->
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M 68,14 L 72,14 L 72,18 L 76,18 L 76,22 L 72,22 L 72,26 L 68,26 L 68,22 L 64,22 L 64,18 L 68,18 Z" />
+
+</vector>
