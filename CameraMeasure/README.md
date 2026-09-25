@@ -80,17 +80,20 @@ share.
 
 ## Install on a phone (prebuilt APK)
 
-A ready-to-install debug build is produced by the build at
+A ready-to-install debug build is published in the `APK/` folder of this repository:
 
 ```
-app/build/outputs/apk/debug/app-debug.apk          # canonical Gradle output
-dist/CameraMeasure-1.0-debug.apk                   # copy of the same file
+APK/CameraMeasure-1.0-debug.apk
   10,666,664 bytes · SHA-256 a8cc011e0b7f1988f52c9b50b48da1142822eb7e2764ec0a6fc6ec3535dd5f85
 ```
 
-Both paths are build artefacts: they are **not** committed to git (`/dist` and `/build` are
-ignored) and they live in whichever environment ran the build. To use the APK on a phone you
-either copy it out of that environment, or rebuild it locally with `./gradlew assembleDebug`.
+It is a debug-signed, universal APK (arm64-v8a, armeabi-v7a, x86, x86_64) that runs on
+Android 7.0 (API 24) and newer — see `APK/README.md` for the install and verification steps.
+Rebuilding from this source produces the same app:
+
+```bash
+./gradlew assembleDebug     # -> app/build/outputs/apk/debug/app-debug.apk
+```
 
 It is a **universal, debug-signed APK** (arm64-v8a, armeabi-v7a, x86, x86_64), so it installs on
 any phone or tablet running Android 7.0 (API 24) or newer. Verify it with:
