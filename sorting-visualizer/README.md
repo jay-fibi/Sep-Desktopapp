@@ -5,6 +5,8 @@ An interactive webpage that demonstrates six classic sorting algorithms — with
 
 ![Tech](https://img.shields.io/badge/UI-HTML%2FCSS%2FJS-blue) ![Code](https://img.shields.io/badge/Code-Java-orange)
 
+![Screenshot](screenshot.png)
+
 ## Features
 
 - **Six algorithms**: Bubble, Selection, Insertion, Merge, Quick, and Heap Sort.
