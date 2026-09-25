@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Java Sorting Algorithm Visualizer</title>
+  <meta name="description" content="Interactive visualization of six classic sorting algorithms, side by side with their real Java implementations." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="title-block">
+      <h1><span class="coffee">☕</span> Java Sorting Visualizer</h1>
+      <p class="subtitle">
+        Watch six classic sorting algorithms race through an array — with the actual
+        Java code executing line by line beside them.
+      </p>
+    </div>
+  </header>
+
+  <nav class="algo-tabs" id="algoTabs" aria-label="Choose a sorting algorithm"></nav>
+
+  <section class="controls" aria-label="Controls">
+    <div class="control-group buttons">
+      <button id="shuffleBtn" class="btn" title="Generate a new array">🔀 New Array</button>
+      <button id="startBtn" class="btn btn-primary" title="Start or pause the animation (Space)">▶ Start</button>
+      <button id="stepBtn" class="btn" title="Advance a single step while paused">⏭ Step</button>
+      <button id="resetBtn" class="btn" title="Restore the array to its pre-sort state">↺ Reset</button>
+    </div>
+    <div class="control-group sliders">
+      <label class="slider-label">
+        <span>Size <output id="sizeVal">60</output></span>
+        <input type="range" id="sizeSlider" min="10" max="150" value="60" />
+      </label>
+      <label class="slider-label">
+        <span>Speed <output id="speedVal">50</output></span>
+        <input type="range" id="speedSlider" min="1" max="100" value="50" />
+      </label>
+      <label class="slider-label select-label">
+        <span>Pattern</span>
+        <select id="patternSelect">
+          <option value="random">Random</option>
+          <option value="nearly">Nearly sorted</option>
+          <option value="reversed">Reversed</option>
+          <option value="few">Few unique</option>
+        </select>
+      </label>
+    </div>
+  </section>
+
+  <section class="stats" aria-label="Statistics">
+    <div class="stat-chip"><span class="stat-label">Status</span><span class="stat-value" id="statStatus">Ready</span></div>
+    <div class="stat-chip"><span class="stat-label">Comparisons</span><span class="stat-value" id="statComparisons">0</span></div>
+    <div class="stat-chip"><span class="stat-label">Swaps / Writes</span><span class="stat-value" id="statSwaps">0</span></div>
+    <div class="stat-chip"><span class="stat-label">Elapsed</span><span class="stat-value" id="statTime">0.0s</span></div>
+    <div class="stat-chip"><span class="stat-label">Elements</span><span class="stat-value" id="statSize">60</span></div>
+  </section>
+
+  <main class="main-split">
+    <section class="viz-panel" aria-label="Visualization">
+      <div id="barContainer" class="bar-container" role="img" aria-label="Bar chart of the array being sorted"></div>
+      <div class="legend">
+        <span><i class="dot dot-default"></i>Unsorted</span>
+        <span><i class="dot dot-comparing"></i>Comparing</span>
+        <span><i class="dot dot-swapping"></i>Swapping / writing</span>
+        <span><i class="dot dot-pivot"></i>Pivot / current</span>
+        <span><i class="dot dot-sorted"></i>Sorted</span>
+      </div>
+    </section>
+
+    <section class="code-panel" aria-label="Java code">
+      <div class="code-header">
+        <span class="code-title" id="codeTitle">Bubble Sort</span>
+        <span class="java-badge">Java</span>
+      </div>
+      <pre id="codeBlock" class="code-block"><code id="codeContent"></code></pre>
+      <div class="complexity-card" id="complexityCard"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      The Java implementations shown here are real, runnable code — see
+      <code>SortingAlgorithms.java</code> in this folder and run it with
+      <code>javac SortingAlgorithms.java &amp;&amp; java SortingAlgorithms</code>.
+    </p>
+  </footer>
+
+  <script src="algorithms.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
