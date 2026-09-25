@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Camera Measure</string>
+
+    <!-- Permission gate -->
+    <string name="permission_title">Camera access needed</string>
+    <string name="permission_body">Camera Measure takes a photo and converts distances on that photo into real-world lengths. The app needs access to your camera to capture the picture used for measuring.</string>
+    <string name="permission_grant">Grant camera access</string>
+
+    <!-- Camera screen -->
+    <string name="capture_title">Point the camera at the object</string>
+    <string name="capture_hint">Place a reference object of known size (e.g. an A4 sheet or a bank card) in the same plane as the object you want to measure, keep the camera parallel to that plane, then tap the shutter.</string>
+    <string name="torch_on">Torch: on</string>
+    <string name="torch_off">Torch: off</string>
+
+    <!-- Measure screen -->
+    <string name="measure_title">Measure</string>
+    <string name="mode_calibrate">1. Calibrate</string>
+    <string name="mode_measure">2. Measure</string>
+    <string name="step_calibrate_hint">Tap the two ends of the reference object you know the size of.</string>
+    <string name="step_calibrate_wait">Tap the second end of the reference object.</string>
+    <string name="step_measure_hint">Tap the two ends of the distance you want to measure.</string>
+    <string name="step_measure_wait">Tap the second point.</string>
+    <string name="step_calibrate_done">Reference set.</string>
+    <string name="reference_length_title">Known length of the reference</string>
+    <string name="reference_length_label">Length in millimetres</string>
+    <string name="reference_length_confirm">Calibrate</string>
+    <string name="reference_length_cancel">Cancel</string>
+    <string name="calibration_summary">Reference: %1$s · %2$s mm over %3$s px → %4$s mm/px</string>
+    <string name="no_calibration">No reference yet</string>
+    <string name="undo_point">Undo</string>
+    <string name="clear_measurements">Clear all</string>
+    <string name="retake">Retake</string>
+    <string name="share_report">Share</string>
+    <string name="measurements_empty">No measurements yet.</string>
+    <string name="delete_measurement">Delete measurement</string>
+    <string name="zoom_hint">Pinch to zoom, drag to pan.</string>
+    <string name="loading_photo">Loading photo…</string>
+    <string name="photo_error">The captured photo could not be loaded. Take a new one.</string>
+    <string name="report_header">Camera Measure results</string>
+    <string name="report_note">Values are approximate: the reference object and the measured object have to lie in the same plane, parallel to the camera.</string>
+    <string name="share_chooser">Share measurements</string>
+</resources>
