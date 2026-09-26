@@ -51,6 +51,16 @@ valid bars and valid Java source lines:
 node test.js
 ```
 
+`test-ui.js` goes further and drives the real page headlessly (via jsdom):
+clicking every algorithm tab, running sorts to completion through both the
+stepper and the animated play/pause path, and checking reset, sliders, and
+input patterns:
+
+```bash
+npm install jsdom   # once
+node test-ui.js
+```
+
 ## Files
 
 | File                     | Purpose                                                            |
@@ -61,6 +71,7 @@ node test.js
 | `app.js`                 | UI controller: rendering, animation runner, controls               |
 | `SortingAlgorithms.java` | Standalone runnable Java versions + demo/benchmark `main`          |
 | `test.js`                | Headless correctness tests for the generators (`node test.js`)     |
+| `test-ui.js`             | Headless full-page UI test via jsdom (`node test-ui.js`)           |
 
 ## Algorithm cheat sheet
 
