@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 20px;
+    }
+
+    .login-card {
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      max-width: 400px;
+      padding: 40px;
+    }
+
+    .login-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .login-header .logo {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin-bottom: 16px;
+    }
+
+    .login-header h1 {
+      font-size: 24px;
+      color: #1a202c;
+      margin-bottom: 6px;
+    }
+
+    .login-header p {
+      color: #718096;
+      font-size: 14px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #4a5568;
+      margin-bottom: 8px;
+    }
+
+    .input-wrapper {
+      position: relative;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px 44px 12px 14px;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 10px;
+      font-size: 14px;
+      color: #2d3748;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+    }
+
+    .form-group input:focus {
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+    }
+
+    .toggle-password {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+      padding: 4px;
+    }
+
+    .form-options {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      font-size: 13px;
+    }
+
+    .remember-me {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #4a5568;
+      cursor: pointer;
+    }
+
+    .remember-me input {
+      accent-color: #667eea;
+      cursor: pointer;
+    }
+
+    .forgot-link {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .forgot-link:hover {
+      text-decoration: underline;
+    }
+
+    .btn-login {
+      width: 100%;
+      padding: 13px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #ffffff;
+      border: none;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.1s;
+    }
+
+    .btn-login:hover {
+      opacity: 0.92;
+    }
+
+    .btn-login:active {
+      transform: scale(0.98);
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      margin: 24px 0;
+      color: #a0aec0;
+      font-size: 12px;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #e2e8f0;
+    }
+
+    .divider span {
+      padding: 0 12px;
+    }
+
+    .social-login {
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn-social {
+      flex: 1;
+      padding: 11px;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 10px;
+      background: #ffffff;
+      font-size: 13px;
+      font-weight: 600;
+      color: #4a5568;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .btn-social:hover {
+      background: #f7fafc;
+      border-color: #cbd5e0;
+    }
+
+    .signup-text {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 13px;
+      color: #718096;
+    }
+
+    .signup-text a {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .signup-text a:hover {
+      text-decoration: underline;
+    }
+
+    .error-message {
+      display: none;
+      background: #fff5f5;
+      border: 1px solid #feb2b2;
+      color: #c53030;
+      font-size: 13px;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 20px;
+    }
+
+    .error-message.visible {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login-card">
+    <div class="login-header">
+      <div class="logo">&#128274;</div>
+      <h1>Welcome back</h1>
+      <p>Sign in to your account to continue</p>
+    </div>
+
+    <div class="error-message" id="errorMessage"></div>
+
+    <form id="loginForm" novalidate>
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <div class="input-wrapper">
+          <input type="password" id="password" name="password" placeholder="Enter your password" required autocomplete="current-password" />
+          <button type="button" class="toggle-password" id="togglePassword" aria-label="Toggle password visibility">&#128065;</button>
+        </div>
+      </div>
+
+      <div class="form-options">
+        <label class="remember-me">
+          <input type="checkbox" id="remember" name="remember" />
+          Remember me
+        </label>
+        <a href="#" class="forgot-link">Forgot password?</a>
+      </div>
+
+      <button type="submit" class="btn-login">Sign in</button>
+    </form>
+
+    <div class="divider"><span>or continue with</span></div>
+
+    <div class="social-login">
+      <button type="button" class="btn-social">Google</button>
+      <button type="button" class="btn-social">GitHub</button>
+    </div>
+
+    <p class="signup-text">Don't have an account? <a href="#">Sign up</a></p>
+  </div>
+
+  <script>
+    const form = document.getElementById('loginForm');
+    const errorMessage = document.getElementById('errorMessage');
+    const togglePassword = document.getElementById('togglePassword');
+    const passwordInput = document.getElementById('password');
+
+    togglePassword.addEventListener('click', () => {
+      const isPassword = passwordInput.type === 'password';
+      passwordInput.type = isPassword ? 'text' : 'password';
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      const password = passwordInput.value;
+
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        showError('Please enter a valid email address.');
+        return;
+      }
+      if (password.length < 6) {
+        showError('Password must be at least 6 characters long.');
+        return;
+      }
+
+      errorMessage.classList.remove('visible');
+      alert('Signing in as ' + email);
+      // TODO: Replace with a real authentication request (fetch/POST to your backend).
+    });
+
+    function showError(message) {
+      errorMessage.textContent = message;
+      errorMessage.classList.add('visible');
+    }
+  </script>
+</body>
+</html>
+
