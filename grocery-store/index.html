@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshMart Grocery Store</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        header {
+            background-color: #2e7d32;
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 28px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            background-color: #66bb6a;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .hero h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        h2.section-title {
+            margin: 30px 0 15px;
+            color: #2e7d32;
+            border-bottom: 2px solid #2e7d32;
+            padding-bottom: 5px;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .product {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .product .emoji {
+            font-size: 50px;
+        }
+
+        .product h3 {
+            margin: 10px 0 5px;
+        }
+
+        .product .price {
+            color: #2e7d32;
+            font-weight: bold;
+            font-size: 18px;
+            margin: 5px 0 10px;
+        }
+
+        .product button {
+            background-color: #2e7d32;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .product button:hover {
+            background-color: #1b5e20;
+        }
+
+        .contact {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .contact p {
+            margin: 8px 0;
+        }
+
+        footer {
+            background-color: #2e7d32;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header with store name and navigation -->
+    <header>
+        <h1>🛒 FreshMart</h1>
+        <nav>
+            <a href="#fruits">Fruits</a>
+            <a href="#vegetables">Vegetables</a>
+            <a href="#dairy">Dairy</a>
+            <a href="#bakery">Bakery</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero banner -->
+    <section class="hero">
+        <h2>Fresh Groceries, Every Day</h2>
+        <p>Your neighborhood store for quality food at great prices.</p>
+    </section>
+
+    <main>
+        <!-- Fruits section -->
+        <h2 class="section-title" id="fruits">🍎 Fruits</h2>
+        <div class="products">
+            <div class="product">
+                <div class="emoji">🍎</div>
+                <h3>Apples</h3>
+                <p class="price">$2.99 / lb</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <div class="emoji">🍌</div>
+                <h3>Bananas</h3>
+                <p class="price">$0.59 / lb</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <div class="emoji">🍊</div>
+                <h3>Oranges</h3>
+                <p class="price">$3.49 / lb</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <div class="emoji">🍇</div>
+                <h3>Grapes</h3>
+                <p class="price">$4.99 / lb</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Vegetables section -->
+        <h2 class="section-title" id="vegetables">🥦 Vegetables</h2>
+        <div class="products">
+            <div class="product">
+                <div class="emoji">🥦</div>
+                <h3>Broccoli</h3>
+                <p class="price">$1.99 / lb</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <div class="emoji">🥕</div>
+                <h3>Carrots</h3>
+                <p class="price">$1.29 / lb</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <div class="emoji">🍅</div>
+                <h3>Tomatoes</h3>
+                <p class="price">$2.49 / lb</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <div class="emoji">🥬</div>
+                <h3>Lettuce</h3>
+                <p class="price">$1.79 each</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+        <!-- Dairy section -->
+        <h2 class="section-title" id="dairy">🥛 Dairy</h2>
+        <div class="products">
+            <div class="product">
+                <div class="emoji">🥛</div>
+                <h3>Milk (1 gal)</h3>
+                <p class="price">$3.99</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <div class="emoji">🧀</div>
+                <h3>Cheddar Cheese</h3>
+                <p class="price">$5.49</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <div class="emoji">🥚</div>
+                <h3>Eggs (dozen)</h3>
+                <p class="price">$2.99</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <div class="emoji">🧈</div>
+                <h3>Butter</h3>
+                <p class="price">$3.29</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Bakery section -->
+        <h2 class="section-title" id="bakery">🍞 Bakery</h2>
+        <div class="products">
+            <div class="product">
+                <div class="emoji">🍞</div>
+                <h3>White Bread</h3>
+                <p class="price">$2.49</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <div class="emoji">🥐</div>
+                <h3>Croissant</h3>
+                <p class="price">$1.99</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <div class="emoji">🥯</div>
+                <h3>Bagels (6 pack)</h3>
+                <p class="price">$3.99</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <div class="emoji">🧁</div>
+                <h3>Muffins (4 pack)</h3>
+                <p class="price">$4.49</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Contact section -->
+        <h2 class="section-title" id="contact">📞 Contact Us</h2>
+        <div class="contact">
+            <p><strong>Address:</strong> 123 Main Street, Hometown, USA</p>
+            <p><strong>Phone:</strong> (555) 123-4567</p>
+            <p><strong>Email:</strong> hello@freshmart.com</p>
+            <p><strong>Hours:</strong> Monday - Sunday, 7:00 AM - 10:00 PM</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 FreshMart Grocery Store. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
