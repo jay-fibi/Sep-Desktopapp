@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Dusty Shelf — Independent Bookstore</title>
+  <meta name="description" content="The Dusty Shelf is an independent bookstore offering curated fiction, mystery, sci-fi, and more. Find your next great read." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#top" class="logo" aria-label="The Dusty Shelf home">
+        <span class="logo-mark">📚</span>
+        <span class="logo-text">The Dusty Shelf</span>
+      </a>
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <a href="#bestsellers">Bestsellers</a>
+        <a href="#categories">Categories</a>
+        <a href="#about">About</a>
+        <a href="#visit">Visit Us</a>
+      </nav>
+      <div class="header-actions">
+        <button class="cart-btn" id="cart-open" aria-label="Open shopping cart">
+          🛒 <span class="cart-count" id="cart-count">0</span>
+        </button>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Independent since 1987</p>
+        <h1>Every great story begins with a <em>good book</em>.</h1>
+        <p class="hero-sub">
+          Hand-picked titles, staff recommendations, and a cozy corner waiting
+          just for you. Browse our shelves — online or in person.
+        </p>
+        <div class="hero-cta">
+          <a href="#bestsellers" class="btn btn-primary">Browse Bestsellers</a>
+          <a href="#about" class="btn btn-ghost">Our Story</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>35k+</strong><span>Titles in stock</span></div>
+          <div><strong>38</strong><span>Years of stories</span></div>
+          <div><strong>4.9★</strong><span>Reader rating</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="stack">
+          <div class="stack-book b1"><span>THE<br/>NIGHT<br/>ORCHARD</span></div>
+          <div class="stack-book b2"><span>SALT &amp;<br/>CINDER</span></div>
+          <div class="stack-book b3"><span>ATLAS OF<br/>SMALL<br/>TOWNS</span></div>
+          <div class="stack-book b4"><span>THE CLOCK<br/>GARDEN</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Bestsellers ===== -->
+  <section class="section" id="bestsellers">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">This month's picks</p>
+          <h2>Bestsellers &amp; Staff Favorites</h2>
+        </div>
+        <div class="toolbar">
+          <input type="search" id="book-search" class="search-input" placeholder="Search title or author…" aria-label="Search books" />
+          <div class="filter-pills" id="filter-pills" role="group" aria-label="Filter by genre">
+            <button class="pill active" data-filter="all">All</button>
+            <button class="pill" data-filter="fiction">Fiction</button>
+            <button class="pill" data-filter="mystery">Mystery</button>
+            <button class="pill" data-filter="scifi">Sci-Fi</button>
+            <button class="pill" data-filter="romance">Romance</button>
+            <button class="pill" data-filter="nonfiction">Non-Fiction</button>
+          </div>
+        </div>
+      </div>
+      <div class="book-grid" id="book-grid"><!-- Cards rendered by script.js --></div>
+      <p class="no-results" id="no-results" hidden>No books match your search. Try another title, author, or genre.</p>
+    </div>
+  </section>
+
+  <!-- ===== Categories ===== -->
+  <section class="section section-alt" id="categories">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Explore the shelves</p>
+          <h2>Browse by Category</h2>
+        </div>
+      </div>
+      <div class="category-grid">
+        <a href="#bestsellers" class="category-card" data-genre="fiction">
+          <span class="cat-icon">📖</span><h3>Fiction</h3><p>Literary &amp; contemporary</p>
+        </a>
+        <a href="#bestsellers" class="category-card" data-genre="mystery">
+          <span class="cat-icon">🕵️</span><h3>Mystery</h3><p>Thrillers &amp; whodunits</p>
+        </a>
+        <a href="#bestsellers" class="category-card" data-genre="scifi">
+          <span class="cat-icon">🚀</span><h3>Sci-Fi</h3><p>Worlds beyond our own</p>
+        </a>
+        <a href="#bestsellers" class="category-card" data-genre="romance">
+          <span class="cat-icon">💌</span><h3>Romance</h3><p>Love in all its forms</p>
+        </a>
+        <a href="#bestsellers" class="category-card" data-genre="nonfiction">
+          <span class="cat-icon">🧭</span><h3>Non-Fiction</h3><p>True stories &amp; ideas</p>
+        </a>
+        <a href="#visit" class="category-card category-card--accent">
+          <span class="cat-icon">☕</span><h3>In-Store Café</h3><p>Read with a warm cup</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== About ===== -->
+  <section class="section" id="about">
+    <div class="container about-inner">
+      <div class="about-art" aria-hidden="true">
+        <div class="shelf">
+          <div class="shelf-row"><i style="--h:70%"></i><i style="--h:90%"></i><i style="--h:60%"></i><i style="--h:100%"></i><i style="--h:75%"></i><i style="--h:85%"></i></div>
+          <div class="shelf-row"><i style="--h:85%"></i><i style="--h:65%"></i><i style="--h:95%"></i><i style="--h:70%"></i><i style="--h:100%"></i><i style="--h:80%"></i></div>
+          <div class="shelf-row"><i style="--h:100%"></i><i style="--h:80%"></i><i style="--h:70%"></i><i style="--h:90%"></i><i style="--h:60%"></i><i style="--h:95%"></i></div>
+        </div>
+      </div>
+      <div class="about-copy">
+        <p class="eyebrow">Our story</p>
+        <h2>A neighborhood bookshop with a big heart</h2>
+        <p>
+          Founded in 1987, The Dusty Shelf began as a single shelf of second-hand
+          paperbacks in the corner of a coffee shop. Today we stock over 35,000
+          titles across three floors — but we still believe every recommendation
+          should come from a real reader, not an algorithm.
+        </p>
+        <ul class="check-list">
+          <li>Weekly staff-pick shelves curated by our booksellers</li>
+          <li>Book clubs, author signings, and story time every Saturday</li>
+          <li>Free gift wrapping and local delivery on orders over $25</li>
+        </ul>
+        <a href="#visit" class="btn btn-primary">Plan Your Visit</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Testimonials ===== -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Kind words</p>
+          <h2>What our readers say</h2>
+        </div>
+      </div>
+      <div class="quote-grid">
+        <figure class="quote-card">
+          <blockquote>"The staff remembered what I read last summer and had three perfect recommendations waiting. This place is magic."</blockquote>
+          <figcaption>— Maya R., regular since 2015</figcaption>
+        </figure>
+        <figure class="quote-card">
+          <blockquote>"Ordered online at noon, picked up my wrapped books by five. The handwritten note inside made my week."</blockquote>
+          <figcaption>— Daniel K., online customer</figcaption>
+        </figure>
+        <figure class="quote-card">
+          <blockquote>"Their mystery section is dangerously good. I've never left with fewer than three books."</blockquote>
+          <figcaption>— Priya S., book club host</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== Newsletter ===== -->
+  <section class="newsletter">
+    <div class="container newsletter-inner">
+      <div>
+        <h2>Get the monthly book list</h2>
+        <p>New arrivals, staff picks, and event invites — once a month, no spam.</p>
+      </div>
+      <form class="newsletter-form" id="newsletter-form" novalidate>
+        <label class="sr-only" for="newsletter-email">Email address</label>
+        <input type="email" id="newsletter-email" placeholder="you@example.com" required />
+        <button type="submit" class="btn btn-light">Subscribe</button>
+      </form>
+      <p class="newsletter-msg" id="newsletter-msg" role="status"></p>
+    </div>
+  </section>
+
+  <!-- ===== Visit / Footer ===== -->
+  <footer class="site-footer" id="visit">
+    <div class="container footer-grid">
+      <div>
+        <a href="#top" class="logo logo--footer"><span class="logo-mark">📚</span><span class="logo-text">The Dusty Shelf</span></a>
+        <p class="footer-blurb">Three floors of books, one very sleepy shop cat, and endless recommendations.</p>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <address>
+          412 Willow Lane<br />
+          Maplewood, OR 97000<br />
+          <a href="tel:+15035550194">(503) 555-0194</a>
+        </address>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <ul class="hours">
+          <li><span>Mon – Fri</span><span>9am – 8pm</span></li>
+          <li><span>Saturday</span><span>9am – 9pm</span></li>
+          <li><span>Sunday</span><span>10am – 6pm</span></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul class="footer-links">
+          <li><a href="#bestsellers">Bestsellers</a></li>
+          <li><a href="#categories">Categories</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#top">Back to top ↑</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year"></span> The Dusty Shelf. All rights reserved.</p>
+      <p>Made with ♥ and a tall stack of paperbacks.</p>
+    </div>
+  </footer>
+
+  <!-- ===== Cart Drawer ===== -->
+  <div class="cart-overlay" id="cart-overlay" hidden></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping cart" aria-hidden="true">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button class="cart-close" id="cart-close" aria-label="Close cart">✕</button>
+    </div>
+    <div class="cart-items" id="cart-items">
+      <p class="cart-empty" id="cart-empty">Your cart is empty — go find a great read!</p>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total-row"><span>Subtotal</span><strong id="cart-total">$0.00</strong></div>
+      <p class="cart-note">Free local delivery on orders over $25.</p>
+      <button class="btn btn-primary btn-block" id="checkout-btn" disabled>Checkout</button>
+    </div>
+  </aside>
+
+  <!-- ===== Toast ===== -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
