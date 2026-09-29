@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Circular market background -->
+    <path
+        android:fillColor="#0B1220"
+        android:pathData="M 54,2 A 52,52 0 1 1 53.9,2 Z" />
+
+    <!-- Subtle grid -->
+    <path
+        android:fillColor="#1B2A45"
+        android:pathData="M 18,42 L 90,42 C 91,42 91,43 90,43 L 18,43 C 17,43 17,42 18,42 Z" />
+    <path
+        android:fillColor="#1B2A45"
+        android:pathData="M 18,66 L 90,66 C 91,66 91,67 90,67 L 18,67 C 17,67 17,66 18,66 Z" />
+
+    <!-- Area under the trend line -->
+    <path
+        android:fillColor="#332563EB"
+        android:pathData="M 22,72 L 42,56 L 56,63 L 74,42 L 88,30 L 88,82 L 22,82 Z" />
+
+    <!-- Rising trend line -->
+    <path
+        android:strokeColor="#38BDF8"
+        android:strokeWidth="6"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M 22,72 L 42,56 L 56,63 L 74,42 L 88,30" />
+
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M 22,68 A 4,4 0 1 1 22,76 A 4,4 0 1 1 22,68 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M 56,59 A 4,4 0 1 1 56,67 A 4,4 0 1 1 56,59 Z" />
+    <path
+        android:fillColor="#12A150"
+        android:pathData="M 88,22 A 8,8 0 1 1 88,38 A 8,8 0 1 1 88,22 Z" />
+</vector>

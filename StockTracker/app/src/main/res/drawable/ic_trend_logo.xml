@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="36dp"
+    android:height="36dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Rounded square badge for the app header -->
+    <path
+        android:fillColor="#16233A"
+        android:pathData="M 22,0 L 86,0 C 98,0 108,10 108,22 L 108,86 C 108,98 98,108 86,108 L 22,108 C 10,108 0,98 0,86 L 0,22 C 0,10 10,0 22,0 Z" />
+
+    <path
+        android:fillColor="#1E3358"
+        android:pathData="M 16,42 L 92,42 C 93,42 93,43 92,43 L 16,43 C 15,43 15,42 16,42 Z" />
+    <path
+        android:fillColor="#1E3358"
+        android:pathData="M 16,70 L 92,70 C 93,70 93,71 92,71 L 16,71 C 15,71 15,70 16,70 Z" />
+
+    <path
+        android:fillColor="#332563EB"
+        android:pathData="M 18,76 L 40,58 L 54,66 L 74,42 L 90,30 L 90,86 L 18,86 Z" />
+
+    <path
+        android:strokeColor="#60A5FA"
+        android:strokeWidth="6"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M 18,76 L 40,58 L 54,66 L 74,42 L 90,30" />
+
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M 18,72 A 4,4 0 1 1 18,80 A 4,4 0 1 1 18,72 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M 54,62 A 4,4 0 1 1 54,70 A 4,4 0 1 1 54,62 Z" />
+    <path
+        android:fillColor="#12A150"
+        android:pathData="M 90,22 A 8,8 0 1 1 90,38 A 8,8 0 1 1 90,22 Z" />
+</vector>

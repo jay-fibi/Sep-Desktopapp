@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">StockTrend</string>
+    <string name="app_tagline">NSE India price tracker</string>
+    <string name="app_subtitle">Add prices manually or pull the live NSE quote</string>
+
+    <string name="add_price">Add Price</string>
+    <string name="delete_entry">Delete</string>
+    <string name="refresh_live">Fetch live NSE price</string>
+
+    <string name="chart_title">Price Trend</string>
+    <string name="history_title">Price History</string>
+    <string name="stat_last">Last</string>
+    <string name="stat_change">Change</string>
+    <string name="stat_low">Low</string>
+    <string name="stat_high">High</string>
+    <string name="stat_avg">Average</string>
+
+    <string name="no_symbols_title">No stocks yet</string>
+    <string name="no_symbols_body">Tap \u201cAdd Price\u201d to record a stock name, its price and the date. You can also pull the current price straight from NSE India.</string>
+    <string name="no_history">No entries for this stock yet.</string>
+
+    <string name="dialog_add_title">Add Stock Price</string>
+    <string name="hint_symbol">Stock symbol (e.g. RELIANCE)</string>
+    <string name="hint_price">Price (\u20b9)</string>
+    <string name="hint_date">Date</string>
+    <string name="btn_fetch_nse">Fetch live from NSE</string>
+    <string name="action_save">Save</string>
+    <string name="action_cancel">Cancel</string>
+
+    <!-- Templates: the currency symbol and the brackets stay part of the message. -->
+    <string name="price_currency">\u20b9%1$s</string>
+    <string name="change_with_percent">%1$s  (%2$s)</string>
+
+    <string name="err_symbol">Enter a stock symbol</string>
+    <string name="err_symbol_chars">Symbols use letters, digits, &amp; and - only</string>
+    <string name="err_price">Enter a valid price greater than 0</string>
+    <string name="err_date_future">Pick a date that is not in the future</string>
+
+    <string name="fetch_failed">Could not reach NSE. Add the price manually.</string>
+    <string name="entry_saved">Price saved</string>
+    <string name="entry_updated">Today\u2019s price updated</string>
+    <string name="entry_deleted">Entry deleted</string>
+    <string name="confirm_delete_title">Delete entry?</string>
+    <string name="confirm_delete_msg">This price point will be removed from the trend chart.</string>
+
+    <string name="badge_live">NSE</string>
+    <string name="badge_sample">Sample</string>
+    <string name="badge_manual">Manual</string>
+
+    <string name="sample_hint">Sample data is shown so the chart is not empty. Delete it once you add your own prices.</string>
+    <string name="company_unknown">NSE listed company</string>
+
+    <string name="symbol_selector">Stock</string>
+    <plurals name="entries_count">
+        <item quantity="one">%1$d entry</item>
+        <item quantity="other">%1$d entries</item>
+    </plurals>
+    <string name="chart_range">%1$s \u2013 %2$s</string>
+
+    <string name="fetching_symbol">Fetching the live %1$s quote from NSE\u2026</string>
+    <string name="fetch_failed_title">NSE fetch failed</string>
+    <string name="err_no_network">No internet connection</string>
+    <string name="action_add_manually">Add manually</string>
+    <string name="action_close">Close</string>
+
+    <string name="detail_company">Company</string>
+    <string name="detail_price">Price</string>
+    <string name="detail_date">Date</string>
+    <string name="detail_source">Source</string>
+</resources>

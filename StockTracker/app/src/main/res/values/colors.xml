@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- StockTrend Branding Colors -->
+    <color name="st_primary">#0B1220</color>
+    <color name="st_primary_light">#16233A</color>
+    <color name="st_accent">#2563EB</color>
+    <color name="st_bg">#F5F7FB</color>
+    <color name="st_card_bg">#FFFFFF</color>
+    <color name="st_card_border">#E4E9F2</color>
+
+    <color name="text_primary">#0F172A</color>
+    <color name="text_secondary">#64748B</color>
+    <color name="text_hint">#94A3B8</color>
+    <color name="text_on_dark">#FFFFFF</color>
+    <color name="text_on_dark_muted">#9AA8C0</color>
+
+    <!-- Market Movement Colors (NSE convention: green up / red down) -->
+    <color name="trend_up">#12A150</color>
+    <color name="trend_down">#E5484D</color>
+    <color name="trend_flat">#64748B</color>
+
+    <!-- Chart Colors -->
+    <color name="chart_line">#2563EB</color>
+    <color name="chart_fill_top">#552563EB</color>
+    <color name="chart_fill_bottom">#002563EB</color>
+    <color name="chart_grid">#E4E9F2</color>
+    <color name="chart_axis_text">#94A3B8</color>
+    <color name="chart_point">#FFFFFF</color>
+
+    <color name="chip_bg">#EEF2FF</color>
+    <color name="chip_text">#3730A3</color>
+    <color name="badge_live_bg">#E7F6EC</color>
+    <color name="badge_live_text">#0F7B3F</color>
+    <color name="badge_sample_bg">#FFF5E5</color>
+    <color name="badge_sample_text">#9A6410</color>
+</resources>
