@@ -266,4 +266,34 @@ public class CalculatorEngineTest {
         engine.restoreState("12a+b;34", false, false);
         assertEquals("12+34", engine.getDisplayExpression());
     }
+
+
+    @Test
+    public void unaryMinusTailCollapsesOnNewOperator() {
+        type("5");
+        engine.inputOperator('*');
+        engine.inputOperator('-');
+        engine.inputOperator('+');
+        assertEquals("5+", engine.getDisplayExpression());
+        type("3");
+        engine.evaluate();
+        assertEquals("8", engine.getDisplayExpression());
+    }
+
+    @Test
+    public void loneMinusClearedByOtherOperator() {
+        engine.inputOperator('-');
+        engine.inputOperator('+');
+        assertEquals("", engine.getDisplayExpression());
+        type("5");
+        engine.evaluate();
+        assertEquals("5", engine.getDisplayExpression());
+    }
+
+    @Test
+    public void loneMinusKeptByMinus() {
+        engine.inputOperator('-');
+        engine.inputOperator('-');
+        assertEquals("−", engine.getDisplayExpression());
+    }
 }

@@ -116,12 +116,26 @@ public class CalculatorEngine {
             last = lastChar();
         }
         if (isOperator(last)) {
-            // Replace the previous operator, but allow "5*-" => negative factor.
             if (op == '-' && last != '-' && !endsWithUnaryMinus()) {
+                // Allow "5*-" => negative factor.
                 expression.append(op);
-            } else {
-                expression.setCharAt(expression.length() - 1, op);
+                return;
             }
+            if (endsWithUnaryMinus() && expression.length() > 1) {
+                // Tail like "5*-": drop the unary minus, replace the binary operator.
+                expression.deleteCharAt(expression.length() - 1);
+                expression.setCharAt(expression.length() - 1, op);
+                return;
+            }
+            if (expression.length() == 1) {
+                // Expression is only "-": another '-' keeps it, anything else clears it.
+                if (op != '-') {
+                    expression.setLength(0);
+                }
+                return;
+            }
+            // Simple replacement, e.g. "5+" then '*' => "5*".
+            expression.setCharAt(expression.length() - 1, op);
             return;
         }
         expression.append(op);
