@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Calculator</string>
+
+    <!-- Theme picker -->
+    <string name="choose_theme">Choose theme</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="theme_ocean">Ocean</string>
+    <string name="theme_forest">Forest</string>
+    <string name="theme_sunset">Sunset</string>
+
+    <!-- Calculator keys -->
+    <string name="key_clear">C</string>
+    <string name="key_backspace">⌫</string>
+    <string name="key_percent">%</string>
+    <string name="key_divide">÷</string>
+    <string name="key_multiply">×</string>
+    <string name="key_subtract">−</string>
+    <string name="key_add">+</string>
+    <string name="key_equals">=</string>
+    <string name="key_sign">±</string>
+    <string name="key_dot">.</string>
+
+    <!-- Accessibility -->
+    <string name="cd_theme_button">Change theme</string>
+    <string name="cd_backspace">Delete last character</string>
+    <string name="cd_clear">Clear all</string>
+
+    <!-- Errors -->
+    <string name="error_generic">Error</string>
+</resources>

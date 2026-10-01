@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Shared configuration. The ?attr/... references are resolved when the
+         theme is applied, so each concrete theme below only sets colors. -->
+    <style name="Theme.Calculator.Base.Light" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:windowBackground">?attr/calcBackground</item>
+        <item name="android:statusBarColor">?attr/calcBackground</item>
+        <item name="android:navigationBarColor">?attr/calcBackground</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <!-- Material colors, so dialogs follow the active theme -->
+        <item name="colorPrimary">?attr/calcButtonEquals</item>
+        <item name="colorSurface">?attr/calcDisplayBackground</item>
+        <item name="colorOnSurface">?attr/calcDisplayTextPrimary</item>
+    </style>
+
+    <style name="Theme.Calculator.Base.Dark" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="android:windowBackground">?attr/calcBackground</item>
+        <item name="android:statusBarColor">?attr/calcBackground</item>
+        <item name="android:navigationBarColor">?attr/calcBackground</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="colorPrimary">?attr/calcButtonEquals</item>
+        <item name="colorSurface">?attr/calcDisplayBackground</item>
+        <item name="colorOnSurface">?attr/calcDisplayTextPrimary</item>
+    </style>
+
+    <style name="Theme.Calculator.Light" parent="Theme.Calculator.Base.Light">
+        <item name="calcBackground">@color/light_background</item>
+        <item name="calcDisplayBackground">@color/light_display</item>
+        <item name="calcDisplayTextPrimary">@color/light_text_primary</item>
+        <item name="calcDisplayTextSecondary">@color/light_text_secondary</item>
+        <item name="calcButtonDigit">@color/light_digit</item>
+        <item name="calcButtonDigitText">@color/light_digit_text</item>
+        <item name="calcButtonAction">@color/light_action</item>
+        <item name="calcButtonActionText">@color/light_action_text</item>
+        <item name="calcButtonOperator">@color/light_operator</item>
+        <item name="calcButtonOperatorText">@color/light_operator_text</item>
+        <item name="calcButtonEquals">@color/light_equals</item>
+        <item name="calcButtonEqualsText">@color/light_equals_text</item>
+        <item name="calcRipple">@color/light_ripple</item>
+        <item name="calcIconTint">@color/light_icon</item>
+    </style>
+
+    <style name="Theme.Calculator.Dark" parent="Theme.Calculator.Base.Dark">
+        <item name="calcBackground">@color/dark_background</item>
+        <item name="calcDisplayBackground">@color/dark_display</item>
+        <item name="calcDisplayTextPrimary">@color/dark_text_primary</item>
+        <item name="calcDisplayTextSecondary">@color/dark_text_secondary</item>
+        <item name="calcButtonDigit">@color/dark_digit</item>
+        <item name="calcButtonDigitText">@color/dark_digit_text</item>
+        <item name="calcButtonAction">@color/dark_action</item>
+        <item name="calcButtonActionText">@color/dark_action_text</item>
+        <item name="calcButtonOperator">@color/dark_operator</item>
+        <item name="calcButtonOperatorText">@color/dark_operator_text</item>
+        <item name="calcButtonEquals">@color/dark_equals</item>
+        <item name="calcButtonEqualsText">@color/dark_equals_text</item>
+        <item name="calcRipple">@color/dark_ripple</item>
+        <item name="calcIconTint">@color/dark_icon</item>
+    </style>
+
+    <style name="Theme.Calculator.Ocean" parent="Theme.Calculator.Base.Dark">
+        <item name="calcBackground">@color/ocean_background</item>
+        <item name="calcDisplayBackground">@color/ocean_display</item>
+        <item name="calcDisplayTextPrimary">@color/ocean_text_primary</item>
+        <item name="calcDisplayTextSecondary">@color/ocean_text_secondary</item>
+        <item name="calcButtonDigit">@color/ocean_digit</item>
+        <item name="calcButtonDigitText">@color/ocean_digit_text</item>
+        <item name="calcButtonAction">@color/ocean_action</item>
+        <item name="calcButtonActionText">@color/ocean_action_text</item>
+        <item name="calcButtonOperator">@color/ocean_operator</item>
+        <item name="calcButtonOperatorText">@color/ocean_operator_text</item>
+        <item name="calcButtonEquals">@color/ocean_equals</item>
+        <item name="calcButtonEqualsText">@color/ocean_equals_text</item>
+        <item name="calcRipple">@color/ocean_ripple</item>
+        <item name="calcIconTint">@color/ocean_icon</item>
+    </style>
+
+    <style name="Theme.Calculator.Forest" parent="Theme.Calculator.Base.Dark">
+        <item name="calcBackground">@color/forest_background</item>
+        <item name="calcDisplayBackground">@color/forest_display</item>
+        <item name="calcDisplayTextPrimary">@color/forest_text_primary</item>
+        <item name="calcDisplayTextSecondary">@color/forest_text_secondary</item>
+        <item name="calcButtonDigit">@color/forest_digit</item>
+        <item name="calcButtonDigitText">@color/forest_digit_text</item>
+        <item name="calcButtonAction">@color/forest_action</item>
+        <item name="calcButtonActionText">@color/forest_action_text</item>
+        <item name="calcButtonOperator">@color/forest_operator</item>
+        <item name="calcButtonOperatorText">@color/forest_operator_text</item>
+        <item name="calcButtonEquals">@color/forest_equals</item>
+        <item name="calcButtonEqualsText">@color/forest_equals_text</item>
+        <item name="calcRipple">@color/forest_ripple</item>
+        <item name="calcIconTint">@color/forest_icon</item>
+    </style>
+
+    <style name="Theme.Calculator.Sunset" parent="Theme.Calculator.Base.Dark">
+        <item name="calcBackground">@color/sunset_background</item>
+        <item name="calcDisplayBackground">@color/sunset_display</item>
+        <item name="calcDisplayTextPrimary">@color/sunset_text_primary</item>
+        <item name="calcDisplayTextSecondary">@color/sunset_text_secondary</item>
+        <item name="calcButtonDigit">@color/sunset_digit</item>
+        <item name="calcButtonDigitText">@color/sunset_digit_text</item>
+        <item name="calcButtonAction">@color/sunset_action</item>
+        <item name="calcButtonActionText">@color/sunset_action_text</item>
+        <item name="calcButtonOperator">@color/sunset_operator</item>
+        <item name="calcButtonOperatorText">@color/sunset_operator_text</item>
+        <item name="calcButtonEquals">@color/sunset_equals</item>
+        <item name="calcButtonEqualsText">@color/sunset_equals_text</item>
+        <item name="calcRipple">@color/sunset_ripple</item>
+        <item name="calcIconTint">@color/sunset_icon</item>
+    </style>
+</resources>

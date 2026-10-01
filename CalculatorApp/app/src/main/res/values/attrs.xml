@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Custom attributes that every calculator theme defines.
+         Layouts and drawables reference them with ?attr/... so a single
+         layout adapts to whichever theme is active. -->
+    <attr name="calcBackground" format="color" />
+    <attr name="calcDisplayBackground" format="color" />
+    <attr name="calcDisplayTextPrimary" format="color" />
+    <attr name="calcDisplayTextSecondary" format="color" />
+    <attr name="calcButtonDigit" format="color" />
+    <attr name="calcButtonDigitText" format="color" />
+    <attr name="calcButtonAction" format="color" />
+    <attr name="calcButtonActionText" format="color" />
+    <attr name="calcButtonOperator" format="color" />
+    <attr name="calcButtonOperatorText" format="color" />
+    <attr name="calcButtonEquals" format="color" />
+    <attr name="calcButtonEqualsText" format="color" />
+    <attr name="calcRipple" format="color" />
+    <attr name="calcIconTint" format="color" />
+</resources>

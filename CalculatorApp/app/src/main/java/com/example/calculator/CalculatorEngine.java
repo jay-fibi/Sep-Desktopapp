@@ -543,4 +543,35 @@ public class CalculatorEngine {
         }
         return mantissa + "E" + exponent.replace("+", "");
     }
+
+    // ------------------------------------------------------------------
+    // State persistence (e.g. across configuration changes)
+    // ------------------------------------------------------------------
+
+    /** Raw internal expression (ASCII operators), for saving instance state. */
+    public String getRawExpression() {
+        return expression.toString();
+    }
+
+    /**
+     * Restores a previously saved state.
+     *
+     * @param raw       value from {@link #getRawExpression()}
+     * @param evaluated value from {@link #isShowingResult()}
+     * @param error     value from {@link #isError()}
+     */
+    public void restoreState(String raw, boolean evaluated, boolean error) {
+        expression.setLength(0);
+        if (raw != null) {
+            // Defensive: only restore syntactically plausible characters.
+            for (int i = 0; i < raw.length(); i++) {
+                char c = raw.charAt(i);
+                if (Character.isDigit(c) || c == '.' || isOperator(c)) {
+                    expression.append(c);
+                }
+            }
+        }
+        this.justEvaluated = evaluated;
+        this.errorState = error;
+    }
 }

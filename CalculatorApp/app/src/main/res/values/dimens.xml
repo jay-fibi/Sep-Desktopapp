@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="screen_padding">14dp</dimen>
+    <dimen name="display_padding">20dp</dimen>
+    <dimen name="display_corner_radius">28dp</dimen>
+    <dimen name="button_corner_radius">22dp</dimen>
+    <dimen name="button_margin">6dp</dimen>
+    <dimen name="button_text_size">26sp</dimen>
+    <dimen name="expression_text_size">48sp</dimen>
+    <dimen name="preview_text_size">22sp</dimen>
+</resources>

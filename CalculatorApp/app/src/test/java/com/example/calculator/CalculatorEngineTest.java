@@ -240,4 +240,30 @@ public class CalculatorEngineTest {
         engine.evaluate();
         assertEquals("12", engine.getDisplayExpression());
     }
+
+
+    @Test
+    public void stateRoundTripRestoresExpression() {
+        type("12+7");
+        CalculatorEngine restored = new CalculatorEngine();
+        restored.restoreState(engine.getRawExpression(), engine.isShowingResult(), engine.isError());
+        assertEquals("12+7", restored.getDisplayExpression());
+        assertEquals("19", restored.getPreview());
+    }
+
+    @Test
+    public void stateRoundTripAfterEvaluation() {
+        type("6*7");
+        engine.evaluate();
+        CalculatorEngine restored = new CalculatorEngine();
+        restored.restoreState(engine.getRawExpression(), engine.isShowingResult(), engine.isError());
+        assertEquals("42", restored.getDisplayExpression());
+        assertTrue(restored.isShowingResult());
+    }
+
+    @Test
+    public void restoreIgnoresInvalidCharacters() {
+        engine.restoreState("12a+b;34", false, false);
+        assertEquals("12+34", engine.getDisplayExpression());
+    }
 }
